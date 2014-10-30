@@ -1,1 +1,22 @@
-EJERCICOS
+<table>
+  <thead>
+    <tr>
+      <th># Ejercicio</th>
+      <th>Tema</th>
+      <th>Fecha Limite</th>
+      <th>Entregado?</th>
+      <th>Calificación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @homeworks.each do |homework| %>
+      <tr>
+        <td><%= homework.guid %></td>
+        <td><%= homework.subject %></td>
+        <td><%= homework.deadline %></td>
+        <td><%= fa_icon "#{homework.delivered_icon}" %></td>
+        <td><%= homework.grade %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
