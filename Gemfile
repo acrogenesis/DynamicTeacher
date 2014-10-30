@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'devise'
+gem 'pundit'
 
 gem 'foundation-rails'
 gem 'font-awesome-rails'
