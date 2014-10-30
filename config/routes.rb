@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
+  get 'examen-diagnostico' => 'diagnostic_exam#show', as: :diagnostic_exam
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
