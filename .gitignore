@@ -6,6 +6,7 @@
 
 # Ignore mac files
 .DS_Store
+database.yml
 
 # Ignore bundler config.
 /.bundle
