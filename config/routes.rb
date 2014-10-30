@@ -2,10 +2,15 @@ Rails.application.routes.draw do
   get 'pages/index'
   root 'pages#index'
 
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations',
+                                    sessions: 'sessions' }
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'examen-diagnostico' => 'diagnostic_exam#show', as: :diagnostic_exam
+
+  namespace :admin do
+    get 'dashboard' => 'dashboard#index'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
