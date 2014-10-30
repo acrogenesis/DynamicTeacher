@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h2><%= fa_icon 'tachometer' %> Dashboard</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <dl class="tabs" data-tab>
+      <dd class="active"><a href="#tareas"><%= fa_icon 'files-o' %> Tareas</a></dd>
+      <dd><a href="#ejercicios"><%= fa_icon 'file-code-o' %> Ejercicios</a></dd>
+      <dd><a href="#videos"><%= fa_icon 'video-camera' %> Videos</a></dd>
+    </dl>
+    <div class="tabs-content">
+      <div class="content active" id="tareas">
+        <%= render 'tareas' %>
+      </div>
+      <div class="content" id="ejercicios">
+        <%= render 'ejercicios' %>
+      </div>
+      <div class="content" id="videos">
+        <%= render 'videos' %>
+      </div>
+    </div>
+  </div>
+</div>

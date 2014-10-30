@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   devise_for :users, controllers: { registrations: 'registrations' }
+
+  get 'dashboard' => 'dashboard#index', as: :dashboard
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
