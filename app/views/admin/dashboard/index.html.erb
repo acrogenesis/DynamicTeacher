@@ -1,1 +1,28 @@
-HOLA ADMIN
+<div class="row">
+  <div class="small-6 columns">
+    <h2><%= fa_icon 'tachometer' %> Dashboard</h2>
+  </div>
+  <div class="small-6 columns">
+    <%= link_to 'Cerrar Sesión', destroy_user_session_path, class: 'right', method: :delete  %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <dl class="tabs" data-tab>
+      <dd class="active"><a href="#tareas"><%= fa_icon 'files-o' %> Tareas</a></dd>
+      <dd><a href="#grupos"><%= fa_icon 'file-code-o' %> Grupos</a></dd>
+      <dd><a href="#metricas"><%= fa_icon 'video-camera' %> Metricas</a></dd>
+    </dl>
+    <div class="tabs-content">
+      <div class="content active" id="tareas">
+        <%= render 'tareas' %>
+      </div>
+      <div class="content" id="ejercicios">
+        <%= render 'grupos' %>
+      </div>
+      <div class="content" id="videos">
+        <%= render 'metricas' %>
+      </div>
+    </div>
+  </div>
+</div>
