@@ -12,10 +12,17 @@
           <%= f.password_field :password, placeholder: "Contraseña" %>
         </div>
         <div class="small-12 columns">
-          grupo
+          <input placeholder="Grupo" required="required" type="text" >
         </div>
         <div class="small-12 columns">
-          enfoque
+          <label>Enfoque
+            <select>
+              <option value=""></option>
+              <option value="cs">Computer Science</option>
+              <option value="business">Negocios</option>
+              <option value="design">Diseño</option>
+            </select>
+          </label>
         </div>
         <div class="small-12 columns">
           <%= f.submit "Registrame", class: "button right" %>
