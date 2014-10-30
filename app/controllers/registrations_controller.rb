@@ -4,8 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
       params[:user][:email] = "#{params[:user][:email]}@itesm.mx"
       super
     else
-      flash.now[:alert] = 'No es una matricula valida'
-      redirect_to root_path
+      redirect_to root_path, alert: 'No es una matricula valida'
     end
   end
 
