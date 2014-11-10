@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030153838) do
+ActiveRecord::Schema.define(version: 20141110153309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "homeworks", force: true do |t|
+    t.integer  "level"
+    t.string   "type"
+    t.string   "subject"
+    t.string   "description"
+    t.datetime "deadline"
+    t.datetime "delivered"
+    t.string   "comment"
+    t.float    "grade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "homeworks_users", id: false, force: true do |t|
+    t.integer "homework_id"
+    t.integer "user_id"
+  end
+
+  add_index "homeworks_users", ["homework_id", "user_id"], name: "index_homeworks_users_on_homework_id_and_user_id", using: :btree
+  add_index "homeworks_users", ["user_id"], name: "index_homeworks_users_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

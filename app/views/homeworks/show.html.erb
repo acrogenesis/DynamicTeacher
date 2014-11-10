@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @homework.level %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @homework.type %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @homework.subject %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @homework.description %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @homework.deadline %>
+</p>
+
+<p>
+  <strong>Delivered:</strong>
+  <%= @homework.delivered %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @homework.comment %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @homework.grade %>
+</p>
+
+<%= link_to 'Edit', edit_homework_path(@homework) %> |
+<%= link_to 'Back', homeworks_path %>
