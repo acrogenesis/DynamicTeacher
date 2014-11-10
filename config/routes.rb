@@ -9,11 +9,12 @@ Rails.application.routes.draw do
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'examen-diagnostico' => 'diagnostic_exam#show', as: :diagnostic_exam
-  resources :homeworks, only: :show
+  resources :homeworks, only: [:edit]
+  post 'subir-tarea' => 'homework_user#create', as: :homework_user
 
   namespace :admin do
     get 'dashboard' => 'dashboard#index'
-    resources :homeworks, except: :show
+    resources :homeworks
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
