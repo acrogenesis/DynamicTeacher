@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'examen-diagnostico' => 'diagnostic_exam#show', as: :diagnostic_exam
-  resources :homeworks, only: [:edit]
+  resources :homeworks, only: [:show]
 
-  get 'tarea/:homework_id' => 'homeworks_users#edit', as: :new_homework_user
-  post 'subir-tarea' => 'homeworks_users#create', as: :homework_user
+  # get 'tarea/:id' => 'homeworks#show', as: :new_homework_user
+  post 'subir-tarea' => 'homeworks_users#create', as: :homework_users
 
   namespace :admin do
     get 'dashboard' => 'dashboard#index'

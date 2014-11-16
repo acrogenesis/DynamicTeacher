@@ -15,8 +15,8 @@
         <td><%= homework.id %></td>
         <td><%= homework.subject %></td>
         <td><%= homework.deadline %></td>
-        <td><%= fa_icon "#{homework.delivered_icon}" %></td>
-        <td><%= homework.grade %></td>
+        <td><%= fa_icon "#{homework.delivered_icon(current_user)}" %></td>
+        <td><%= homework.grade(current_user) %></td>
         <td><%= link_to(fa_icon('comments'), '#', data: { reveal_id: 'commentarios' }) %></td>
       </tr>
     <% end %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @homework.level %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @homework.hw_type %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @homework.subject %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @homework.description %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @homework.deadline %>
+</p>
+
+<%= form_for @homework_user do |f| %>
+  <%= f.hidden_field :homework_id, value: @homework.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.label :file, 'Adjuntar archivo de tarea' %>
+  <%= f.file_field :file %>
+  <%= f.submit 'Subir', class: 'button' %>
+
+<% end %>
+
+<%= link_to 'Back', dashboard_path %>

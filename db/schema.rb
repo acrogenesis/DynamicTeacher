@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112202138) do
+ActiveRecord::Schema.define(version: 20141116042935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,17 +22,17 @@ ActiveRecord::Schema.define(version: 20141112202138) do
     t.string   "subject"
     t.string   "description"
     t.datetime "deadline"
-    t.datetime "delivered"
-    t.string   "comment"
-    t.float    "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "homeworks_users", id: false, force: true do |t|
-    t.integer "homework_id"
-    t.integer "user_id"
-    t.string  "file"
+    t.integer  "homework_id"
+    t.integer  "user_id"
+    t.string   "file"
+    t.float    "grade"
+    t.string   "comment"
+    t.datetime "delivered"
   end
 
   add_index "homeworks_users", ["homework_id", "user_id"], name: "index_homeworks_users_on_homework_id_and_user_id", using: :btree

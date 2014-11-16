@@ -18,7 +18,6 @@ class Admin::HomeworksController < ApplicationController
   def create
     @homework = Homework.new(homework_params)
 
-    @user = User.new(params[:user])
     if @homework.save
       redirect_to action: :index
     else

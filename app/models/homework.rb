@@ -1,11 +1,25 @@
 class Homework < ActiveRecord::Base
   has_and_belongs_to_many :users
 
-  def delivered_icon
+  def delivered_icon(current_user)
+    delivered = HomeworkUser.where(user_id: current_user, homework_id: self).first
     if delivered
       'check'
     else
       'times'
+    end
+  end
+
+  def grade(current_user)
+    hw = HomeworkUser.where(user_id: current_user, homework_id: self).first
+    if hw
+      if hw.grade
+        hw.grade
+      else
+        'Sin calificar'
+      end
+    else
+      'Sin calificar'
     end
   end
 end
