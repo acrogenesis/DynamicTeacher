@@ -17,7 +17,13 @@ class Admin::HomeworksController < ApplicationController
 
   def create
     @homework = Homework.new(homework_params)
-    @homework.save
+
+    @user = User.new(params[:user])
+    if @homework.save
+      redirect_to action: :index
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -29,11 +35,12 @@ class Admin::HomeworksController < ApplicationController
   end
 
   private
-    def set_homework
-      @homework = Homework.find(params[:id])
-    end
 
-    def homework_params
-      params.require(:homework).permit(:level, :type, :subject, :description, :deadline, :delivered, :comment, :grade)
-    end
+  def set_homework
+    @homework = Homework.find(params[:id])
+  end
+
+  def homework_params
+    params.require(:homework).permit(:level, :hw_type, :subject, :description, :deadline, :delivered)
+  end
 end

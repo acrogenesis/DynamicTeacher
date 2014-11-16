@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :homeworks
-
-  get 'pages/index'
   root 'pages#index'
 
   devise_for :users, controllers: { registrations: 'registrations',
@@ -10,7 +7,9 @@ Rails.application.routes.draw do
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'examen-diagnostico' => 'diagnostic_exam#show', as: :diagnostic_exam
   resources :homeworks, only: [:edit]
-  post 'subir-tarea' => 'homework_user#create', as: :homework_user
+
+  get 'tarea/:homework_id' => 'homeworks_users#edit', as: :new_homework_user
+  post 'subir-tarea' => 'homeworks_users#create', as: :homework_user
 
   namespace :admin do
     get 'dashboard' => 'dashboard#index'

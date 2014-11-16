@@ -19,16 +19,16 @@
     <% @homeworks.each do |homework| %>
       <tr>
         <td><%= homework.level %></td>
-        <td><%= homework.type %></td>
+        <td><%= homework.hw_type %></td>
         <td><%= homework.subject %></td>
         <td><%= homework.description %></td>
         <td><%= homework.deadline %></td>
         <td><%= homework.delivered %></td>
         <td><%= homework.comment %></td>
         <td><%= homework.grade %></td>
-        <td><%= link_to 'Show', homework %></td>
+        <td><%= link_to 'Show', admin_homework_path(homework) %></td>
         <td><%= link_to 'Edit', edit_admin_homework_path(homework) %></td>
-        <td><%= link_to 'Destroy', admin_homework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', admin_homework_path(homework), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

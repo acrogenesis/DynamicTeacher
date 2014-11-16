@@ -12,7 +12,7 @@
   <tbody>
     <% @homeworks.each do |homework| %>
       <tr>
-        <td><%= homework.guid %></td>
+        <td><%= homework.id %></td>
         <td><%= homework.subject %></td>
         <td><%= homework.deadline %></td>
         <td><%= fa_icon "#{homework.delivered_icon}" %></td>

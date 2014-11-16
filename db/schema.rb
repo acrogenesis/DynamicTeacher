@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110155959) do
+ActiveRecord::Schema.define(version: 20141112202138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "homeworks", force: true do |t|
     t.integer  "level"
-    t.string   "type"
+    t.string   "hw_type"
     t.string   "subject"
     t.string   "description"
     t.datetime "deadline"
