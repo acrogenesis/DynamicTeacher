@@ -9,4 +9,28 @@ class HomeworkUser < ActiveRecord::Base
   def user
     User.find(user_id)
   end
+
+  def inline_grade
+    if grade.nil?
+      'SC'
+    else
+      grade
+    end
+  end
+
+  def inline_grade=(inline_grade)
+    self.grade = inline_grade
+  end
+
+  def inline_comment
+    if comment.nil?
+      'Sin Comentario'
+    else
+      comment
+    end
+  end
+
+  def inline_comment=(inline_comment)
+    self.comment = inline_comment
+  end
 end

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+ //= require abracadabra
 //= require turbolinks
 //= require_tree .
 

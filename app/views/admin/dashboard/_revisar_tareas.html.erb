@@ -4,7 +4,9 @@
       <th>Subject</th>
       <th>File</th>
       <th>Delivered</th>
-      <th colspan="2"></th>
+      <th>Grade</th>
+      <th>Comment</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -13,8 +15,9 @@
         <td><%= pending_homework.homework.subject %></td>
         <td><%= link_to pending_homework.file.file.filename.to_s, pending_homework.file.url %></td>
         <td><%= pending_homework.created_at %></td>
-        <td><%= link_to 'Show', admin_homework_path(pending_homework) %></td>
-        <td><%= link_to 'Destroy', admin_homework_path(pending_homework), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= click_to_edit pending_homework, path: admin_homeworks_user_path(pending_homework), attribute: :inline_grade %></td>
+        <td><%= click_to_edit pending_homework, path: admin_homeworks_user_path(pending_homework), attribute: :inline_comment %></td>
+        <td><%= link_to 'Destroy', admin_homeworks_user_path(pending_homework), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

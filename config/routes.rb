@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'dashboard' => 'dashboard#index'
     resources :homeworks, except: :index
+    resources :homeworks_users, only: [:show, :update, :destroy]
     resources :groups, except: :index
   end
 
