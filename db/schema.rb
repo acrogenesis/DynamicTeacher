@@ -33,9 +33,11 @@ ActiveRecord::Schema.define(version: 20141117173234) do
     t.datetime "updated_at"
   end
 
-  create_table "homeworks_users", id: false, force: true do |t|
+  create_table "homeworks_users", force: true do |t|
     t.integer  "homework_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "file"
     t.float    "grade"
     t.string   "comment"
