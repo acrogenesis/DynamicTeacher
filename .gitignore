@@ -8,6 +8,8 @@
 .DS_Store
 database.yml
 
+/public/uploads
+
 # Ignore bundler config.
 /.bundle
 
