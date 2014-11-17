@@ -19,7 +19,7 @@ class Admin::HomeworksController < ApplicationController
     @homework = Homework.new(homework_params)
 
     if @homework.save
-      redirect_to admin_dashboard_controller
+      redirect_to admin_dashboard_path
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class Admin::HomeworksController < ApplicationController
 
   def update
     if @homework.update(homework_params)
-      redirect_to admin_dashboard_controller
+      redirect_to admin_dashboard_path
     else
       render 'edit'
     end
