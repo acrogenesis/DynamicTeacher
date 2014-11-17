@@ -13,8 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
- //= require abracadabra
+//= require abracadabra
+//= require datatables
+//= require dataTables.foundation
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(); $('table').dataTable(); });

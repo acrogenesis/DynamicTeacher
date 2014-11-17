@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 ruby '2.1.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -20,6 +21,10 @@ gem 'devise'
 gem 'pundit'
 
 gem 'abracadabra'
+
+# bower
+gem 'rails-assets-datatables'
+gem 'rails-assets-jquery', require: false
 
 gem 'foundation-rails', '5.4.1.0'
 gem 'font-awesome-rails'
