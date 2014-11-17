@@ -8,13 +8,17 @@
 </div>
 <div class="row">
   <div class="small-12 columns">
-    <dl class="tabs" data-tab>
-      <dd class="active"><a href="#tareas"><%= fa_icon 'files-o' %> Tareas</a></dd>
+    <dl class="tabs" data-tab data-options="deep_linking:true">
+      <dd class="active"><a href="#revisar_tareas"><%= fa_icon 'files-o' %> Revisar Tareas</a></dd>
+      <dd ><a href="#tareas"><%= fa_icon 'files-o' %> Tareas</a></dd>
       <dd><a href="#grupos"><%= fa_icon 'users' %> Grupos</a></dd>
       <dd><a href="#metricas"><%= fa_icon 'bar-chart' %> Metricas</a></dd>
     </dl>
     <div class="tabs-content">
-      <div class="content active" id="tareas">
+      <div class="content active" id="revisar_tareas">
+        <%= render 'revisar_tareas' %>
+      </div>
+      <div class="content" id="tareas">
         <%= render 'tareas' %>
       </div>
       <div class="content" id="grupos">

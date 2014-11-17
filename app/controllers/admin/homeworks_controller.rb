@@ -19,14 +19,18 @@ class Admin::HomeworksController < ApplicationController
     @homework = Homework.new(homework_params)
 
     if @homework.save
-      redirect_to action: :index
+      redirect_to admin_dashboard_controller
     else
       render 'new'
     end
   end
 
   def update
-    @homework.update(homework_params)
+    if @homework.update(homework_params)
+      redirect_to admin_dashboard_controller
+    else
+      render 'edit'
+    end
   end
 
   def destroy

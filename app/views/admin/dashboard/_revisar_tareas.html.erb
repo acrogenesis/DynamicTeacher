@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>File</th>
+      <th>Delivered</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pending_homeworks.each do |pending_homework| %>
+      <tr>
+        <td><%= pending_homework.homework.subject %></td>
+        <td><%= link_to pending_homework.file.file.filename.to_s, pending_homework.file.url %></td>
+        <td><%= pending_homework.delivered %></td>
+        <td><#= link_to 'Show', admin_homework_path(homework) %></td>
+        <td><%= link_to 'Destroy', admin_homework_path(homework), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div id="commentarios" class="reveal-modal" data-reveal>
+  <h2>Comentarios</h2>
+  <p>Muy buen trabajo!</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

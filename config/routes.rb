@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'dashboard' => 'dashboard#index'
-    resources :homeworks
+    resources :homeworks, except: :index
     resources :groups, except: :index
   end
 
