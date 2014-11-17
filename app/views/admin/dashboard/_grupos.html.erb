@@ -1,1 +1,20 @@
-aqui grupos
+<%= link_to 'Crear Grupo', new_admin_group_path  %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Horario</th>
+      <th>Nombre</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.schedule %></td>
+        <td><%= group.name %></td>
+        <td><%= link_to 'Editar', edit_admin_group_path(group), class: 'button'%> <%= link_to 'Borrar', admin_groups_path(group), class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

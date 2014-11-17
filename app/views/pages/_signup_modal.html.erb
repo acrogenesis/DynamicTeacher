@@ -12,17 +12,10 @@
           <%= f.password_field :password, placeholder: "Contraseña" %>
         </div>
         <div class="small-12 columns">
-          <input placeholder="Grupo" required="required" type="text" >
+          <%= f.select :group_id, Group.all.collect {|x| [x.name, x.id]}, {} %>
         </div>
         <div class="small-12 columns">
-          <label>Enfoque
-            <select>
-              <option value=""></option>
-              <option value="cs">Computer Science</option>
-              <option value="business">Negocios</option>
-              <option value="design">Diseño</option>
-            </select>
-          </label>
+          <%= f.select :focus, User.focus %>
         </div>
         <div class="small-12 columns">
           <%= f.submit "Registrame", class: "button right" %>
