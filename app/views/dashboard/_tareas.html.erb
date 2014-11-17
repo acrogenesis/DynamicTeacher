@@ -4,9 +4,7 @@
       <th># Tarea</th>
       <th>Tema</th>
       <th>Fecha Limite</th>
-      <th>Entregado?</th>
-      <th>Calificación</th>
-      <th>Comentarios</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -15,16 +13,8 @@
         <td><%= homework.id %></td>
         <td><%= homework.subject %></td>
         <td><%= homework.deadline %></td>
-        <td><%= fa_icon "#{homework.delivered_icon(current_user)}" %></td>
-        <td><%= homework.grade(current_user) %></td>
-        <td><%= link_to(fa_icon('comments'), '#', data: { reveal_id: 'commentarios' }) %></td>
+        <td><%= link_to 'Ver', homework_path(homework) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<div id="commentarios" class="reveal-modal" data-reveal>
-  <h2>Comentarios</h2>
-  <p>Muy buen trabajo!</p>
-  <a class="close-reveal-modal">&#215;</a>
-</div>

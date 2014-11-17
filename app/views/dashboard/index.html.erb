@@ -6,16 +6,21 @@
     <%= link_to 'Cerrar Sesión', destroy_user_session_path, class: 'right', method: :delete  %>
   </div>
 </div>
+<%= display_flash_messages %>
 <div class="row">
   <div class="small-12 columns">
-    <dl class="tabs" data-tab>
-      <dd class="active"><a href="#tareas"><%= fa_icon 'files-o' %> Tareas</a></dd>
+    <dl class="tabs" data-tab data-options="deep_linking:true">
+      <dd class="active"><a href="#tareas-pendientes"><%= fa_icon 'files-o' %> Tareas Pendientes</a></dd>
+      <dd><a href="#calificaciones"><%= fa_icon 'files-o' %> Calificaciones</a></dd>
       <dd><a href="#ejercicios"><%= fa_icon 'file-code-o' %> Ejercicios</a></dd>
       <dd><a href="#videos"><%= fa_icon 'video-camera' %> Videos</a></dd>
     </dl>
     <div class="tabs-content">
-      <div class="content active" id="tareas">
+      <div class="content active" id="tareas-pendientes">
         <%= render 'tareas' %>
+      </div>
+      <div class="content" id="calificaciones">
+        <%= render 'calificaciones' %>
       </div>
       <div class="content" id="ejercicios">
         <%#= render 'ejercicios' %>
