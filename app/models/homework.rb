@@ -22,4 +22,17 @@ class Homework < ActiveRecord::Base
       'Sin calificar'
     end
   end
+
+  def comment(current_user)
+    hw = HomeworkUser.where(user_id: current_user, homework_id: self).first
+    if hw
+      if hw.comment
+        hw.comment
+      else
+        'Sin commentarios'
+      end
+    else
+      'Sin commentarios'
+    end
+  end
 end

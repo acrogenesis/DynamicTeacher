@@ -1,7 +1,6 @@
 <table>
   <thead>
     <tr>
-      <th># Tarea</th>
       <th>Tema</th>
       <th>Calificación</th>
       <th>Comentarios</th>
@@ -10,17 +9,15 @@
   <tbody>
     <% @homeworks.each do |homework| %>
       <tr>
-        <td><%= homework.id %></td>
         <td><%= homework.subject %></td>
         <td><%= homework.grade(current_user) %></td>
-        <td><%= link_to(fa_icon('comments'), '#', data: { reveal_id: 'commentarios' }) %></td>
+        <td><%= link_to(fa_icon('comments'), '#', data: { reveal_id: "commentarios_#{homework.id}" }) %></td>
       </tr>
+      <div id="commentarios_<%= homework.id %>" class="reveal-modal" data-reveal>
+        <h2>Comentario</h2>
+        <p><%= homework.comment(current_user) %></p>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
     <% end %>
   </tbody>
 </table>
-
-<div id="commentarios" class="reveal-modal" data-reveal>
-  <h2>Comentarios</h2>
-  <p>Muy buen trabajo!</p>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
