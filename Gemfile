@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'pundit'
 
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.1.0'
 gem 'font-awesome-rails'
 
 # Uploading files
