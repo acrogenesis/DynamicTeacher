@@ -1,16 +1,14 @@
 <table>
   <thead>
     <tr>
-      <th># Tarea</th>
       <th>Tema</th>
       <th>Fecha Limite</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <% @homeworks.each do |homework| %>
+    <% @pending_homeworks.each do |homework| %>
       <tr>
-        <td><%= homework.id %></td>
         <td><%= homework.subject %></td>
         <td><%= homework.deadline %></td>
         <td><%= link_to 'Ver', homework_path(homework) %></td>

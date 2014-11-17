@@ -34,7 +34,11 @@ class Admin::HomeworksController < ApplicationController
   end
 
   def destroy
-    @homework.destroy
+    if @homework.destroy
+      redirect_to admin_dashboard_path
+    else
+      redirect_to admin_dashboard_path, error: "Couldn't destroy homework"
+    end
   end
 
   private

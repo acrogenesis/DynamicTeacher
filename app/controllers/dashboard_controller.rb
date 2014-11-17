@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    @homeworks = Homework.all
+    @homeworks = HomeworkUser.homeworks(current_user)
+    @pending_homeworks =  Homework.all - @homeworks
   end
 end

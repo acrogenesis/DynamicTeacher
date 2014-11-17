@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'hirb'
 end
 
 # Use ActiveModel has_secure_password

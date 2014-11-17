@@ -2,6 +2,10 @@ class HomeworkUser < ActiveRecord::Base
   self.table_name = 'homeworks_users'
   mount_uploader :file, HomeworkUploader
 
+  def self.homeworks(user_id)
+    where(user_id: user_id).map(&:homework)
+  end
+
   def homework
     Homework.find(homework_id)
   end
