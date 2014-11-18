@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117173234) do
+ActiveRecord::Schema.define(version: 20141117231824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: true do |t|
+    t.string   "answer"
+    t.string   "field_type"
+    t.boolean  "correct"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+
+  create_table "diagnostic_exams", force: true do |t|
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "groups", force: true do |t|
     t.string   "schedule"
@@ -46,6 +63,15 @@ ActiveRecord::Schema.define(version: 20141117173234) do
 
   add_index "homeworks_users", ["homework_id", "user_id"], name: "index_homeworks_users_on_homework_id_and_user_id", using: :btree
   add_index "homeworks_users", ["user_id"], name: "index_homeworks_users_on_user_id", using: :btree
+
+  create_table "questions", force: true do |t|
+    t.string   "question"
+    t.integer  "diagnostic_exam_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["diagnostic_exam_id"], name: "index_questions_on_diagnostic_exam_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
