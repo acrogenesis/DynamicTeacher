@@ -1,20 +1,15 @@
 class Admin::QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
   def index
     @questions = Question.all
-    respond_with(@questions)
   end
 
   def show
-    respond_with(@question)
   end
 
   def new
     @question = Question.new
-    respond_with(@question)
   end
 
   def edit
@@ -24,20 +19,22 @@ class Admin::QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     else
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     end
   end
 
   def update
-    @question.update(question_params)
-    respond_with(@question)
+    if @question.update(question_params)
+      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
+    else
+      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
+    end
   end
 
   def destroy
     @question.destroy
-    respond_with(@question)
   end
 
   private

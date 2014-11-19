@@ -19,25 +19,25 @@ class Admin::HomeworksController < ApplicationController
     @homework = Homework.new(homework_params)
 
     if @homework.save
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'tareas')
     else
-      render 'new'
+      redirect_to admin_dashboard_path(anchor: 'tareas')
     end
   end
 
   def update
     if @homework.update(homework_params)
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'tareas')
     else
-      render 'edit'
+      redirect_to admin_dashboard_path(anchor: 'tareas')
     end
   end
 
   def destroy
     if @homework.destroy
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'tareas')
     else
-      redirect_to admin_dashboard_path, error: "Couldn't destroy homework"
+      redirect_to admin_dashboard_path(anchor: 'tareas'), error: "Couldn't destroy homework"
     end
   end
 

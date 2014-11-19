@@ -12,17 +12,17 @@ class Admin::DiagnosticExamsController < ApplicationController
     @diagnostic_exam = DiagnosticExam.new(diagnostic_exam_params)
 
     if @diagnostic_exam.save
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     else
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     end
   end
 
   def update
     if @diagnostic_exam.update(diagnostic_exam_params)
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     else
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     end
   end
 

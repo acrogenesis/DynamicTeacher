@@ -12,17 +12,17 @@ class Admin::GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'grupos')
     else
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'grupos')
     end
   end
 
   def update
     if @group.update(group_params)
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'grupos')
     else
-      redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path(anchor: 'grupos')
     end
   end
 
