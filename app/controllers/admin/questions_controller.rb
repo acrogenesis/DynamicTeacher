@@ -17,7 +17,6 @@ class Admin::QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-
     if @question.save
       redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     else
@@ -44,6 +43,9 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:question, :diagnostic_exam_id, answers_attributes: [:answer, :field_type, :correct, :question_id, :_destroy, :id])
+    hash = params.require(:question).permit(:question, :diagnostic_exam_id,
+                                            answers_attributes: [:answer, :field_type, :correct, :question_id, :_destroy, :id])
+    hash['diagnostic_exam_id'] = params['diagnostic_exam_id']
+    hash
   end
 end

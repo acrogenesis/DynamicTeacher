@@ -1,11 +1,16 @@
 class Admin::DiagnosticExamsController < ApplicationController
   before_action :set_diagnostic_exam, only: [:show, :edit, :update, :destroy]
 
+  def show
+    @questions = Question.where(diagnostic_exam_id: @diagnostic_exam.id)
+  end
+
   def new
     @diagnostic_exam = DiagnosticExam.new
   end
 
   def edit
+    @questions = Question.where(diagnostic_exam_id: @diagnostic_exam.id)
   end
 
   def create

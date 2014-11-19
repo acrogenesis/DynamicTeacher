@@ -1,23 +1,17 @@
 <div class="row">
   <div class="small-12 columns">
-    <h2>Examen Diagnostico</h2>
+    <h2>Examen Diagnostico - <%= @diagnostic_exam.subject %></h2>
   </div>
 </div>
 <div class="row">
   <div class="small-12 columns">
-    <form id="form_id" action="#" method="post">
-      <% 10.times do %>
-        <div class="row">
-          <div class="large-6 columns">
-            <label>Choose Your Favorite</label>
-            <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
-            <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
-          </div>
-        </div>
-      <% end %>
-      <%= link_to 'Enviar', dashboard_path, class: 'button right' %>
-
-    </form>
-
+    <% @questions.each_with_index do |question, i| %>
+      <strong>Pregunta <%= i %>: <%= question.question %></strong>
+      <br/>
+      Respuesta correcta: <%= question.correct_answer.first.answer %>
+      <br/>
+    <% end %>
   </div>
 </div>
+
+<%= link_to 'Regresar', admin_dashboard_path(anchor: 'examenes_diagnositcos') %>
