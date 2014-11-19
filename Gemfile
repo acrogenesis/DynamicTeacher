@@ -28,6 +28,7 @@ gem 'rails-assets-jquery', require: false
 
 gem 'foundation-rails', '5.4.1.0'
 gem 'font-awesome-rails'
+gem 'simple_form'
 
 # Uploading files
 gem 'carrierwave'
