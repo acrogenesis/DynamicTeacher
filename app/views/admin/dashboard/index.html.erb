@@ -12,6 +12,7 @@
       <dd class="active"><a href="#revisar_tareas"><%= fa_icon 'files-o' %> Revisar Tareas</a></dd>
       <dd ><a href="#tareas"><%= fa_icon 'files-o' %> Tareas</a></dd>
       <dd><a href="#grupos"><%= fa_icon 'users' %> Grupos</a></dd>
+      <dd><a href="#examenes_diagnositcos"><%= fa_icon 'bar-chart' %> Examenes Diagnositcos</a></dd>
       <dd><a href="#metricas"><%= fa_icon 'bar-chart' %> Metricas</a></dd>
     </dl>
     <div class="tabs-content">
@@ -20,6 +21,9 @@
       </div>
       <div class="content" id="tareas">
         <%= render 'tareas' %>
+      </div>
+      <div class="content" id="examenes_diagnositcos">
+        <%= render 'examenes_diagnositcos' %>
       </div>
       <div class="content" id="grupos">
         <%= render 'grupos' %>

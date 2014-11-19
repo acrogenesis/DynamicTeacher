@@ -1,0 +1,22 @@
+<%= link_to 'Crear un Examen Diagnositco', new_admin_diagnostic_exam_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @diagnostic_exams.each do |diagnostic_exam| %>
+      <tr>
+        <td><%= diagnostic_exam.subject %></td>
+        <td>
+          <%= link_to 'Show', admin_diagnostic_exam_path(diagnostic_exam) %> |
+          <%= link_to 'Edit', edit_admin_diagnostic_exam_path(diagnostic_exam) %> |
+          <%= link_to 'Destroy', admin_diagnostic_exam_path(diagnostic_exam), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

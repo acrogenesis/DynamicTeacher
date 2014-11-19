@@ -1,0 +1,7 @@
+<fieldset>
+  <%= f.select :field_type, %w{radio_button check_box} %>
+  <%= f.text_field :answer, placeholder: 'answer' %>
+  <%= f.check_box :correct %><%= f.label :correct %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to '[remove]', '#', class: 'remove_fields' %>
+</fieldset>

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :questions
-
   root 'pages#index'
 
   devise_for :users, controllers: { registrations: 'registrations',
@@ -18,6 +16,10 @@ Rails.application.routes.draw do
     resources :homeworks, except: :index
     resources :homeworks_users, only: [:show, :update, :destroy]
     resources :groups, except: :index
+    resources :diagnostic_exams do
+      resources :questions
+    end
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,5 +3,6 @@ class Admin::DashboardController < ApplicationController
     @homeworks = Homework.all
     @pending_homeworks = HomeworkUser.all
     @groups = Group.all
+    @diagnostic_exams = DiagnosticExam.all
   end
 end
