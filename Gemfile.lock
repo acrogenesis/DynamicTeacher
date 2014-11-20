@@ -1,9 +1,14 @@
+GIT
+  remote: git://github.com/acrogenesis/abracadabra.git
+  revision: 4193272f93f67dda8b8886f007c97de143aa0467
+  specs:
+    abracadabra (1.2.0)
+      rails (>= 3.2.11)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
-    abracadabra (1.2.0)
-      rails (>= 3.2.11)
     actionmailer (4.1.6)
       actionpack (= 4.1.6)
       actionview (= 4.1.6)
@@ -156,7 +161,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  abracadabra
+  abracadabra!
   better_errors
   binding_of_caller
   carrierwave

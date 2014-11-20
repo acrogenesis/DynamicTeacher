@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require foundation
@@ -21,6 +22,7 @@
 
 $(function(){
   $(document).foundation();
+  $.abracadabra();
   $('table').dataTable({
     'language': {
       'url': '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json'

@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'pundit'
 
-gem 'abracadabra'
+gem 'abracadabra', github: 'acrogenesis/abracadabra'
 
 # bower
 gem 'rails-assets-datatables'
