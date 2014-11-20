@@ -13,7 +13,11 @@ class Admin::HomeworksUsersController < ApplicationController
   end
 
   def destroy
-    @homework.destroy
+    if @homework.destroy
+      redirect_to admin_dashboard_path(anchor: 'revisar_tareas')
+    else
+      redirect_to admin_dashboard_path(anchor: 'revisar_tareas')
+    end
   end
 
   private
