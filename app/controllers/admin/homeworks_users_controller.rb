@@ -5,7 +5,6 @@ class Admin::HomeworksUsersController < ApplicationController
   end
 
   def update
-    puts homework_user_params
     if @homework.update(homework_user_params)
       redirect_to admin_dashboard_path(anchor: 'revisar_tareas')
     else
