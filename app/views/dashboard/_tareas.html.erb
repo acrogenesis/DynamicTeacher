@@ -11,7 +11,7 @@
       <tr>
         <td><%= homework.subject %></td>
         <td><%= homework.deadline %></td>
-        <td><%= link_to 'Ver', homework_path(homework) %></td>
+        <td><%= link_to 'Ver', homework_path(homework), class: 'button tiny radius no-margin' %></td>
       </tr>
     <% end %>
   </tbody>

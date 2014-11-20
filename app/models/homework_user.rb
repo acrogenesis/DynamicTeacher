@@ -10,6 +10,22 @@ class HomeworkUser < ActiveRecord::Base
     Homework.find(homework_id)
   end
 
+  def filename
+    if file.file.nil?
+      'No hay archivo'
+    else
+      file.file.filename.to_s
+    end
+  end
+
+  def file_url
+    if file.url.nil?
+      '#'
+    else
+      file.url
+    end
+  end
+
   def user
     User.find(user_id)
   end

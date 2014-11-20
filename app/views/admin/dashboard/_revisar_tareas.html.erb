@@ -13,7 +13,7 @@
     <% @pending_homeworks.each do |pending_homework| %>
       <tr>
         <td><%= pending_homework.homework.subject %></td>
-        <td><%= link_to pending_homework.file.file.filename.to_s, pending_homework.file.url %></td>
+        <td><%= link_to pending_homework.filename, pending_homework.file_url %></td>
         <td><%= pending_homework.created_at %></td>
         <td><%= click_to_edit pending_homework, path: admin_homeworks_user_path(pending_homework), attribute: :inline_grade %></td>
         <td><%= click_to_edit pending_homework, path: admin_homeworks_user_path(pending_homework), attribute: :inline_comment %></td>

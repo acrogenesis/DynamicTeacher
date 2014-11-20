@@ -1,37 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Tarea <%= @homework.subject %></h1>
+  </div>
+</div>
 
-<p>
-  <strong>Level:</strong>
-  <%= @homework.level %>
-</p>
+<%= display_flash_messages %>
 
-<p>
-  <strong>Type:</strong>
-  <%= @homework.hw_type %>
-</p>
+<div class="row">
+  <div class="small-12 columns">
+    Level: <%= @homework.level %>
+  </div>
+</div>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @homework.subject %>
-</p>
+<div class="row">
+  <div class="small-12 columns">
+    Type: <%= @homework.hw_type %>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @homework.description %>
-</p>
+<div class="row">
+  <div class="small-12 columns">
+    Description: <%= @homework.description %>
+  </div>
+</div>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @homework.deadline %>
-</p>
+<div class="row">
+  <div class="small-12 columns">
+    Deadline: <%= @homework.deadline %>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="small-12 columns">
+    <div class="panel">
+      <%= simple_form_for @homework_user do |f| %>
+        <%= f.hidden_field :homework_id, value: @homework.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.input :file, label: 'Archivo de tarea:' %>
 
-<%= form_for @homework_user do |f| %>
-  <%= f.hidden_field :homework_id, value: @homework.id %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.label :file, 'Adjuntar archivo de tarea' %>
-  <%= f.file_field :file %>
-  <%= f.submit 'Subir', class: 'button' %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
 
-<% end %>
+  </div>
+</div>
 
-<%= link_to 'Regresar', dashboard_path %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'Regresar', dashboard_path(anchor: 'tareas'), class: 'button tiny radius' %>
+  </div>
+</div>
