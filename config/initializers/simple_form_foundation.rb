@@ -7,16 +7,22 @@ SimpleForm.setup do |config|
     b.optional :pattern
     b.optional :min_max
     b.optional :readonly
-    b.use :label_input
+    # b.use :label_input
     b.use :error, wrap_with: { tag: :small }
 
-    # Uncomment the following line to enable hints. The line is commented out by default since Foundation
-    # does't provide styles for hints. You will need to provide your own CSS styles for hints.
-    # b.use :hint,  wrap_with: { tag: :span, class: :hint }
+    b.wrapper :my_wrapper, tag: :div, class: 'row' do |c|
+      c.wrapper tag: :div, class: 'small-2 columns' do |d|
+        d.use :label
+        d.use :small, wrap_with: { tag: :small }
+      end
+      # c.use :label, wrap_with: { tag: :div, class: 'large-3 columns' }
+      # c.use :small, wrap_with: { tag: :small }
+      c.use :input, wrap_with: { tag: :div, class: 'small-10 medium-8 columns end' }
+    end
   end
 
   # CSS class for buttons
-  config.button_class = 'button'
+  config.button_class = 'small radius button'
 
   # CSS class to add for error notification helper.
   config.error_notification_class = 'alert-box alert'

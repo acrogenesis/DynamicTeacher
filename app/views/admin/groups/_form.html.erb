@@ -1,26 +1,9 @@
-<%= form_for [:admin, @group] do |f| %>
-  <% if @group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+<%= simple_form_for [:admin, @group] do |f| %>
+  <%= display_flash_messages %>
 
-      <ul>
-      <% @group.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.input :schedule %>
+  <%= f.input :name %>
 
-  <div class="field">
-    <%= f.label :schedule %><br>
-    <%= f.text_field :schedule %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+  <%= f.button :submit %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

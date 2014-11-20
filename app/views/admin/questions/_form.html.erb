@@ -1,17 +1,14 @@
-<%= form_for [:admin, :diagnostic_exam, @question] do |f| %>
+<%= simple_form_for [:admin, @diagnostic_exam, @question] do |f| %>
   <%= display_flash_messages %>
 
-  <div class="field">
-    <%= f.label :question %><br>
-    <%= f.text_field :question %>
-  </div>
+  <%= f.input :question %>
 
   <%= f.fields_for :answers do |builder| %>
     <%= render 'answer_fields', f: builder %>
   <% end %>
-  <%= link_to_add_fields "Add Field", f, :answers %>
+  <%= link_to_add_fields 'Agregar Respuesta', f, :answers %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit %>
   </div>
 <% end %>

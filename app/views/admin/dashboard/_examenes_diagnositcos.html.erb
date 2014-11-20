@@ -1,4 +1,4 @@
-<%= link_to 'Crear un Examen Diagnositco', new_admin_diagnostic_exam_path %>
+<%= link_to 'Crear un Examen Diagnositco', new_admin_diagnostic_exam_path, class: 'button tiny radius' %>
 
 <table>
   <thead>
@@ -12,9 +12,9 @@
       <tr>
         <td><%= diagnostic_exam.subject %></td>
         <td>
-          <%= link_to 'Show', admin_diagnostic_exam_path(diagnostic_exam) %> |
-          <%= link_to 'Edit', edit_admin_diagnostic_exam_path(diagnostic_exam) %> |
-          <%= link_to 'Destroy', admin_diagnostic_exam_path(diagnostic_exam), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Ver', admin_diagnostic_exam_path(diagnostic_exam), class: 'button tiny radius no-margin' %>
+          <%= link_to 'Editar', edit_admin_diagnostic_exam_path(diagnostic_exam), class: 'button tiny radius no-margin' %>
+          <%= link_to 'Borrar', admin_diagnostic_exam_path(diagnostic_exam), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert no-margin' %>
         </td>
       </tr>
     <% end %>

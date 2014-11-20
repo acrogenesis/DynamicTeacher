@@ -10,15 +10,17 @@ class Admin::QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @diagnostic_exam = DiagnosticExam.find(params[:diagnostic_exam_id])
   end
 
   def edit
+    @diagnostic_exam = DiagnosticExam.find(params[:diagnostic_exam_id])
   end
 
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
+      redirect_to edit_admin_diagnostic_exam_path(params[:diagnostic_exam_id])
     else
       redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     end
@@ -26,7 +28,7 @@ class Admin::QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
+      redirect_to edit_admin_diagnostic_exam_path(params[:diagnostic_exam_id])
     else
       redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     end

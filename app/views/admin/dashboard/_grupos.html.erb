@@ -1,4 +1,4 @@
-<%= link_to 'Crear Grupo', new_admin_group_path  %>
+<%= link_to 'Crear Grupo', new_admin_group_path, class: 'button tiny radius' %>
 
 <table>
   <thead>
@@ -13,7 +13,10 @@
       <tr>
         <td><%= group.schedule %></td>
         <td><%= group.name %></td>
-        <td><%= link_to 'Editar', edit_admin_group_path(group), class: 'button'%> <%= link_to 'Borrar', admin_groups_path(group), class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Editar', edit_admin_group_path(group), class: 'button tiny radius no-margin' %>
+          <%= link_to 'Borrar', admin_groups_path(group), class: 'button tiny radius alert no-margin', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

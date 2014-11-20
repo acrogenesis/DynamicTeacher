@@ -6,12 +6,22 @@
 <div class="row">
   <div class="small-12 columns">
     <% @questions.each_with_index do |question, i| %>
-      <strong>Pregunta <%= i %>: <%= question.question %></strong>
-      <br/>
-      Respuesta correcta: <%= question.correct_answer.first.answer %>
-      <br/>
+      <div class="row">
+        <div class="small-12 columns">
+          <strong>Pregunta <%= i+1 %>: <%= question.question %></strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          Respuesta correcta: <%= question.correct_answer.first.answer %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
 
-<%= link_to 'Regresar', admin_dashboard_path(anchor: 'examenes_diagnositcos') %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'Regresar', admin_dashboard_path(anchor: 'examenes_diagnositcos'), class: 'button tiny radius' %>
+  </div>
+</div>

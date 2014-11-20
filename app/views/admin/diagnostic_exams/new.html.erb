@@ -1,5 +1,17 @@
-<h1>New Group</h1>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Nuevo Examen Diagnostico</h1>
+  </div>
+</div>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= render 'form' %>
+  </div>
+</div>
 
-<%= link_to 'Back', admin_dashboard_path %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'Regresar', admin_dashboard_path(anchor: 'examenes_diagnositcos'), class: 'button tiny radius' %>
+  </div>
+</div>

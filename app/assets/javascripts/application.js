@@ -19,4 +19,11 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); $('table').dataTable(); });
+$(function(){
+  $(document).foundation();
+  $('table').dataTable({
+    'language': {
+      'url': '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json'
+    }
+  });
+});

@@ -1,37 +1,11 @@
-<%= form_for [:admin, @homework] do |f| %>
-  <% if @homework.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@homework.errors.count, "error") %> prohibited this homework from being saved:</h2>
+<%= simple_form_for [:admin, @homework] do |f| %>
+  <%= display_flash_messages %>
 
-      <ul>
-      <% @homework.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.input :level %>
+  <%= f.input :hw_type %>
+  <%= f.input :subject %>
+  <%= f.input :description %>
+  <%= f.input :deadline %>
 
-  <div class="field">
-    <%= f.label :level %><br>
-    <%= f.number_field :level %>
-  </div>
-  <div class="field">
-    <%= f.label :hw_type %><br>
-    <%= f.text_field :hw_type %>
-  </div>
-  <div class="field">
-    <%= f.label :subject %><br>
-    <%= f.text_field :subject %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.datetime_select :deadline %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit %>
 <% end %>

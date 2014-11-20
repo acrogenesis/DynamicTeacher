@@ -1,4 +1,4 @@
-<%= link_to 'Crear Tarea', new_admin_homework_path %>
+<%= link_to 'Crear Tarea', new_admin_homework_path, class: 'button tiny radius' %>
 
 <table>
   <thead>
@@ -18,9 +18,9 @@
         <td><%= homework.subject %></td>
         <td><%= homework.deadline %></td>
         <td>
-          <%= link_to 'Show', admin_homework_path(homework) %> |
-          <%= link_to 'Edit', edit_admin_homework_path(homework) %> |
-          <%= link_to 'Destroy', admin_homework_path(homework), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Ver', admin_homework_path(homework), class: 'button tiny radius no-margin' %>
+          <%= link_to 'Editar', edit_admin_homework_path(homework), class: 'button tiny radius no-margin' %>
+          <%= link_to 'Borrar', admin_homework_path(homework), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert no-margin' %>
         </td>
       </tr>
     <% end %>

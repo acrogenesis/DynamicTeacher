@@ -1,7 +1,11 @@
-<fieldset>
-  <%= f.select :field_type, %w{radio_button check_box} %>
-  <%= f.text_field :answer, placeholder: 'answer' %>
-  <%= f.check_box :correct %><%= f.label :correct %>
-  <%= f.hidden_field :_destroy %>
-  <%= link_to '[remove]', '#', class: 'remove_fields' %>
+<fieldset class="no-border">
+  <%= f.input :field_type, collection: %w{radio_button check_box} %>
+  <%= f.input :answer %>
+  <%= f.input :correct %>
+  <div class="row">
+    <div class="small-12">
+      <%= f.hidden_field :_destroy %>
+      <%= link_to 'remove', '#', class: 'remove_fields button tiny radius alert' %>
+    </div>
+  </div>
 </fieldset>
