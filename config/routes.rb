@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   devise_for :users, controllers: { registrations: 'registrations',
-                                    sessions: 'sessions' }
+                                    sessions: 'sessions',
+                                    passwords: 'passwords'}
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'examen-diagnostico' => 'diagnostic_exam#show', as: :diagnostic_exam
