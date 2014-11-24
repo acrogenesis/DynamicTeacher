@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Ejercicio - <%= @practice.subject %></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <% @practice.questions.each_with_index do |question, i| %>
+      <div class="row">
+        <div class="small-1 columns">
+          <%= i+1 %>)
+        </div>
+        <div class="small-11 columns">
+          <strong><%= question.question %></strong>
+        </div>
+      </div>
+      <% question.answers.each do |answer| %>
+        <div class="row">
+          <div class="small-11 small-offset-1">
+            <a href="#" class="button tiny radius success" onclick="toggleCode(this, 'editor-<%= answer.id %>');">Mostrar Respuesta</a>
+            <div id="editor-<%= answer.id %>" class="hide">
+              <div class="editor"><%= answer.answer %></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'Regresar', dashboard_path(anchor: 'ejercicios'), class: 'button small radius' %>
+  </div>
+</div>
+
+<script charset="utf-8">
+  function toggleCode(btn, editor){
+    $(btn).text(function(i, text){
+      return text === 'Mostrar Respuesta' ? 'Ocultar Respuesta' : 'Mostrar Respuesta';
+    })
+    $('#' + editor).toggle();
+  }
+</script>

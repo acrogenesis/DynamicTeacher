@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'examen-diagnostico' => 'diagnostic_exam#show', as: :diagnostic_exam
   resources :homeworks, only: :show
+  resources :practices, only: :show
 
   # get 'tarea/:id' => 'homeworks#show', as: :new_homework_user
   post 'subir-tarea' => 'homeworks_users#create', as: :homework_users

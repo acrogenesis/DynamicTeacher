@@ -25,6 +25,7 @@ gem 'abracadabra', github: 'acrogenesis/abracadabra'
 # bower
 gem 'rails-assets-datatables'
 gem 'rails-assets-jquery', require: false
+gem 'rails-assets-ace-builds'
 
 gem 'foundation-rails', '5.4.1.0'
 gem 'font-awesome-rails'

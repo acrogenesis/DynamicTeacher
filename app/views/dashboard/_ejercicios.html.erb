@@ -1,21 +1,15 @@
 <table>
   <thead>
     <tr>
-      <th># Ejercicio</th>
       <th>Tema</th>
-      <th>Fecha Limite</th>
-      <th>Entregado?</th>
-      <th>Calificación</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <% @homeworks.each do |homework| %>
+    <% @practices.each do |practice| %>
       <tr>
-        <td><%= homework.id %></td>
-        <td><%= homework.subject %></td>
-        <td><%= homework.deadline %></td>
-        <td><%= fa_icon "#{homework.delivered_icon}" %></td>
-        <td><%= homework.grade %></td>
+        <td><%= practice.subject %></td>
+        <td><%= link_to 'Ver', practice_path(practice), class: 'button tiny radius no-margin' %></td>
       </tr>
     <% end %>
   </tbody>

@@ -17,6 +17,9 @@
 //= require abracadabra
 //= require datatables
 //= require dataTables.foundation
+//= require ace-builds/src/ace
+//= require ace-builds/src/ext-beautify
+//= require ace-builds/src/mode-csharp
 //= require turbolinks
 //= require_tree .
 
@@ -27,5 +30,13 @@ $(function(){
     'language': {
       'url': '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json'
     }
+  });
+  var editor;
+  var beautify = require('ace/ext/beautify');
+  $('.editor').each(function( index ) {
+    editor = ace.edit(this);
+    editor.getSession().setMode('ace/mode/csharp');
+    beautify.beautify(editor.getSession());
+    editor.setReadOnly(true);
   });
 });
