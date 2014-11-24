@@ -6,6 +6,7 @@
     <%= link_to 'Cerrar Sesión', destroy_user_session_path, class: 'right', method: :delete, class: 'button small radius alert'  %>
   </div>
 </div>
+<%= display_flash_messages %>
 <div class="row">
   <div class="small-12 columns">
     <dl class="tabs" data-tab data-options="deep_linking:true">
