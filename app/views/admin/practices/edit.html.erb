@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Editar Ejercicio</h1>
+
+    <%= simple_form_for [:admin, @practice] do |f| %>
+      <%= display_flash_messages %>
+
+      <%= f.input :subject %><br>
+      <%= f.button :submit %>
+
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h4>Preguntas Actuales</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% @questions.each do |question| %>
+    <div class="small-12 columns">
+      <%= question.question %> | <%= link_to 'Editar', edit_admin_practice_question_path(@practice, question) %>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'Agregar Preguntas', new_admin_practice_question_path(@practice), class: 'button tiny radius success' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'Regresar', admin_dashboard_path(anchor: 'ejercicios'), class: 'button tiny radius' %>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Ejercico - <%= @practice.subject %></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <% @questions.each_with_index do |question, i| %>
+      <div class="row">
+        <div class="small-12 columns">
+          <strong>Pregunta <%= i+1 %>: <%= question.question %></strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          Respuesta correcta: <%= question.correct_answer.first.answer %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'Regresar', admin_dashboard_path(anchor: 'ejercicios'), class: 'button tiny radius' %>
+  </div>
+</div>

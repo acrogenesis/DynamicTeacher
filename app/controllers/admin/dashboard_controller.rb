@@ -4,5 +4,6 @@ class Admin::DashboardController < ApplicationController
     @pending_homeworks = HomeworkUser.all
     @groups = Group.all
     @diagnostic_exams = DiagnosticExam.all
+    @practices = Practice.all
   end
 end

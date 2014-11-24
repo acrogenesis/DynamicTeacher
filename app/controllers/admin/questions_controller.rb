@@ -1,5 +1,6 @@
 class Admin::QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_diagnostic_exam_or_practice, only: [:new, :edit]
 
   def index
     @questions = Question.all
@@ -10,27 +11,41 @@ class Admin::QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    @diagnostic_exam = DiagnosticExam.find(params[:diagnostic_exam_id])
   end
 
   def edit
-    @diagnostic_exam = DiagnosticExam.find(params[:diagnostic_exam_id])
   end
 
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to edit_admin_diagnostic_exam_path(params[:diagnostic_exam_id])
+      if @question.diagnostic_exam_id
+        redirect_to edit_admin_diagnostic_exam_path(params[:diagnostic_exam_id])
+      else
+        redirect_to edit_admin_practice_path(params[:practice_id])
+      end
     else
-      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
+      if @question.diagnostic_exam_id
+        redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
+      else
+        redirect_to admin_dashboard_path(anchor: 'ejercicios')
+      end
     end
   end
 
   def update
     if @question.update(question_params)
-      redirect_to edit_admin_diagnostic_exam_path(params[:diagnostic_exam_id])
+      if @question.diagnostic_exam_id
+        redirect_to edit_admin_diagnostic_exam_path(params[:diagnostic_exam_id])
+      else
+        redirect_to edit_admin_practice_path(params[:practice_id])
+      end
     else
-      redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
+      if @question.diagnostic_exam_id
+        redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
+      else
+        redirect_to admin_dashboard_path(anchor: 'ejercicios')
+      end
     end
   end
 
@@ -44,10 +59,22 @@ class Admin::QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
+  def set_diagnostic_exam_or_practice
+    if params[:diagnostic_exam_id]
+      @object = DiagnosticExam.find(params[:diagnostic_exam_id])
+      @back_route = edit_admin_diagnostic_exam_path(@object)
+    elsif params[:practice_id]
+      @object = Practice.find(params[:practice_id])
+      @back_route = edit_admin_practice_path(@object)
+    end
+
+  end
+
   def question_params
     hash = params.require(:question).permit(:question, :diagnostic_exam_id,
                                             answers_attributes: [:answer, :field_type, :correct, :question_id, :_destroy, :id])
     hash['diagnostic_exam_id'] = params['diagnostic_exam_id']
+    hash['practice_id'] = params['practice_id']
     hash
   end
 end

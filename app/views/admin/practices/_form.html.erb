@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @practice] do |f| %>
+  <%= display_flash_messages %>
+
+  <%= f.input :subject %>
+
+  <%= f.button :submit %>
+<% end %>

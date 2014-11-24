@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     resources :diagnostic_exams do
       resources :questions
     end
-
+    resources :practices do
+      resources :questions
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

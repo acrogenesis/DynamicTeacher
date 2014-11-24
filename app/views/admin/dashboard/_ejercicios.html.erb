@@ -1,0 +1,22 @@
+<%= link_to 'Crear un Ejercicio', new_admin_practice_path, class: 'button tiny radius' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @practices.each do |practice| %>
+    <tr>
+      <td><%= practice.subject %></td>
+      <td>
+        <%= link_to 'Ver', admin_practice_path(practice), class: 'button tiny radius no-margin' %>
+        <%= link_to 'Editar', edit_admin_practice_path(practice), class: 'button tiny radius no-margin' %>
+        <%= link_to 'Borrar', admin_practice_path(practice), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert no-margin' %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
