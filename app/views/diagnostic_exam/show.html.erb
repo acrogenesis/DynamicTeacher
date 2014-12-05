@@ -1,23 +1,25 @@
 <div class="row">
   <div class="small-12 columns">
-    <h2>Examen Diagnostico</h2>
+    <h2>Examen Diagnostico - <%= @diagnostic_exam.subject %></h2>
   </div>
 </div>
 <div class="row">
   <div class="small-12 columns">
-    <form id="form_id" action="#" method="post">
-      <% 10.times do %>
+    <%= simple_form_for @diagnostic_exam_user do |f| %>
+      <%= f.hidden_field :diagnostic_exam_id, value: @diagnostic_exam.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <% @diagnostic_exam.questions.each do |question| %>
         <div class="row">
           <div class="large-6 columns">
-            <label>Choose Your Favorite</label>
-            <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
-            <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+            <label><strong><%= question.question %></strong></label>
+            <% question.answers.each do |answer| %>
+              <%= radio_button_tag "answers[#{question.id}]", answer.id, false %>
+              <label for="answers_<%= "#{question.id}_#{answer.id}" %>"><%= answer.answer %></label>
+            <% end %>
           </div>
         </div>
       <% end %>
-      <%= link_to 'Enviar', dashboard_path, class: 'button right' %>
-
-    </form>
-
+      <%= f.button :submit %>
+    <% end %>
   </div>
 </div>
