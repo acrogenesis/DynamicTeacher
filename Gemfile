@@ -31,6 +31,8 @@ gem 'foundation-rails', '5.4.1.0'
 gem 'font-awesome-rails'
 gem 'simple_form'
 
+gem 'redcarpet' # markdown
+
 # Uploading files
 gem 'carrierwave'
 

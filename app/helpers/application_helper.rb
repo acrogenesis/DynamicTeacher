@@ -32,6 +32,26 @@ module ApplicationHelper
     link_to(name, '#', class: 'add_fields', data: { id: id, fields: fields.gsub("\n", '') })
   end
 
+  def markdown(text)
+    render_options = {
+      filter_html:     true,
+      hard_wrap:       true,
+      link_attributes: { rel: 'nofollow' }
+    }
+    renderer = Redcarpet::Render::HTML.new(render_options)
+
+    extensions = {
+      tables: true,
+      autolink:           true,
+      fenced_code_blocks: true,
+      lax_spacing:        true,
+      no_intra_emphasis:  true,
+      strikethrough:      true,
+      superscript:        true
+    }
+    Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
+  end
+
   private
 
   def build_message(args)

@@ -7,38 +7,19 @@
 <%= display_flash_messages %>
 
 <div class="row">
-  <div class="small-12 columns">
-    Level: <%= @homework.level %>
+  <div class="small-8 columns">
+    <h4>Description:</h4>
+    <%= markdown @homework.description %>
   </div>
-</div>
-
-<div class="row">
-  <div class="small-12 columns">
-    Type: <%= @homework.hw_type %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="small-12 columns">
-    Description: <%= @homework.description %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="small-12 columns">
-    Deadline: <%= @homework.deadline %>
-  </div>
-</div>
-<br/>
-<div class="row">
-  <div class="small-12 columns">
+  <div class="small-4 columns">
     <div class="panel">
       <%= simple_form_for @homework_user do |f| %>
         <%= f.hidden_field :homework_id, value: @homework.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.input :file, label: 'Archivo de tarea:' %>
+        Archivo de tarea
+        <%= f.input :file, label: false %>
 
-        <%= f.button :submit %>
+        <%= f.button :submit, 'Subir Tarea', class: 'button small radius success' %>
       <% end %>
     </div>
 
