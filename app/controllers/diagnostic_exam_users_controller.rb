@@ -6,12 +6,14 @@ class DiagnosticExamUsersController < ApplicationController
   end
 
   def create
-    grade = DiagnosticExam.find(diagnostic_exam_user_params[:diagnostic_exam_id]).check(params['answers'])
+    diagnostic_exam = DiagnosticExam.find(diagnostic_exam_user_params[:diagnostic_exam_id])
+    grade = diagnostic_exam.check(params['answers'])
     level = Level.level_for_grade(grade)
     new_params = diagnostic_exam_user_params.merge('grade' => grade)
     @diagnostic_exam_user = DiagnosticExamUser.new(new_params)
     if @diagnostic_exam_user.save
       current_user.update_attribute(:level, level)
+      current_user.update_attribute(:subject, diagnostic_exam.subject)
       redirect_to dashboard_path
     else
       redirect_to diagnostic_exam_path(@diagnostic_exam_user.diagnostic_exam_id)
