@@ -6,6 +6,7 @@ class Subject
   end
 
   def self.next(current)
+    return SUBJECTS.first if current.nil?
     SUBJECTS[SUBJECTS.index(current)+1]
   end
 end
