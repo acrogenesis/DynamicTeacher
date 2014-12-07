@@ -11,7 +11,7 @@ El método deberá recibir como parámetro las horas trabajadas **(int)** y el p
 ###Casos de Prueba
 
 |Horas|Salario/Hora|Salario Bruto|Impuestos|Salario Neto|
-|-|-|-|-|-|
+|:-:|:-:|:-:|:-:|:-:|
 |20|200|4000|0|4000|
 |40|200|8000|0|8000|
 |41|200|8300|830|7470|

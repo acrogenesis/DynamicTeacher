@@ -3,7 +3,7 @@
 Desarrolla una Aplicación que lea de teclado una sola letra  y despliegue el dígito correspondiente de acuerdo a las teclas del teléfono. Las letras y los dígitos del teléfono están agrupados de la siguiente forma:
 
 |2|3|4|5|6|7|8|9|
-|-|-|-|-|-|-|-|-|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |ABC|DEF|GHI|JKL|MNO|PRS|TUV|WXY|
 
 ###Información Relevante
@@ -21,9 +21,11 @@ El mismo mensaje se debe desplegar para caracteres especiales.
 ```sh
 Teclea una letra, y yo te diré qué dígito del teléfono le corresponde:
 > R
-El dígito 7 corresponde a la letra R en el teléfono.```
+El dígito 7 corresponde a la letra R en el teléfono.
+```
 
 ```sh
 Teclea una letra, y yo te diré qué dígito del teléfono le corresponde:
 > Q
-No hay ningún dígito en el teléfono que corresponda a la Q.```
+No hay ningún dígito en el teléfono que corresponda a la Q.
+```

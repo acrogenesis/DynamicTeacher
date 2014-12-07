@@ -13,7 +13,7 @@ Desarrolla una aplicación que haga lo siguiente:
 Si el arreglo contiene los siguientes números:
 
 |3|2|6|5|7|
-|-|-|-|-|-|
+|:-:|:-:|:-:|:-:|:-:|
 |0|1|2|3|4|
 
 **Desplegará**:
@@ -22,13 +22,14 @@ Si el arreglo contiene los siguientes números:
 **
 ******
 *****
-*******```
+*******
+```
 
 
 Si el arreglo contiene los siguientes números:
 
 |3|12|6|50|17|
-|-|--|-|--|--|
+|:-:|:-:|:-:|:-:|:-:|
 |0|1 |2|3 |4 |
 
 **Desplegará**:
@@ -37,4 +38,5 @@ Si el arreglo contiene los siguientes números:
 ************
 ******
 **************************************************
-*****************```
+*****************
+```

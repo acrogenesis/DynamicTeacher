@@ -2,17 +2,18 @@
 
 ###Descripcion del problema:
 
-Los trabajadores de cierta compañía han obtenido un incremento de **7%** en sus salarios, retroactivo a los últimos 6 meses.  
+Los trabajadores de cierta compañía han obtenido un incremento de **7%** en sus salarios, retroactivo a los últimos 6 meses.
 
 ###**¿Qué hay que hacer?**
 
 Escriba un programa que pida al usuario el salario anual anterior,  y produzca el monto de pago retroactivo que se le debe, el nuevo salario anual y el nuevo salario mensual.    Utilice una constante entera para expresar el porcentaje de aumento de sueldo.
 
-###Ejemplo: 
+###Ejemplo:
 
 ¿Cuál es tu salario ANUAL ?
 ```sh
-80400```
+80400
+```
 
 ```sh
 Respuesta:

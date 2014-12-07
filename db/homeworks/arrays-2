@@ -7,13 +7,13 @@ Desarrolla una Aplicación con los siguientes métodos:
 **Inicio:**
 
 |M|E|X|I|C|O|
-|-|-|-|-|-|-|
+|:-:|:-:|:-:|:-:|:-:|:-:|
 |0|1|2|3|4|5|
 
 **Resultado:**
 
 |E|X|I|C|O|M|
-|-|-|-|-|-|-|
+|:-:|:-:|:-:|:-:|:-:|:-:|
 |0|1|2|3|4|5|
 
 - **static void ShiftRight(string []arr):**  Recorre todas las celdas una casilla hacia la derecha.
@@ -21,13 +21,13 @@ Desarrolla una Aplicación con los siguientes métodos:
 **Inicio:**
 
 |M|E|X|I|C|O|
-|-|-|-|-|-|-|
+|:-:|:-:|:-:|:-:|:-:|:-:|
 |0|1|2|3|4|5|
 
 **Resultado:**
 
 |O|M|E|X|I|C|
-|-|-|-|-|-|-|
+|:-:|:-:|:-:|:-:|:-:|:-:|
 |0|1|2|3|4|5|
 
 - **static void Despliega(int []arr):** despliega en pantalla el arreglo.
@@ -37,7 +37,7 @@ Para probar tu aplicación, llama a los métodos desarrollados y utiliza el sigu
   - Crear el arreglo, por ejemplo:
 
   ```csharp
-  string arr1[] = {“V”, “I”, “S”, “I”, “T”, “A”, “.”,“M”, “E”, “X”, “I”, “C”, “O”, “.”};
+  string arr1[] = {"V", "I", "S", "I", "T", "A", ".","M", "E", "X", "I", "C", "O", "."};
   ```
 
   - Dentro de un ciclo infinito:
@@ -48,5 +48,5 @@ Para probar tu aplicación, llama a los métodos desarrollados y utiliza el sigu
 El resultado se debe de visualizar como una marquesina, moviéndose hacia la derecha o hacia la izquierda, con el letrero que escribiste dentro del arreglo.   Observa el ejemplo que te mostrará el instructor.
 
 **CUIDADO:**
-- **Uno de los errores más comunes en esta práctica es: IndexOutOfBoundsException,  que quiere decir “índice fuera de rango”.**
+- **Uno de los errores más comunes en esta práctica es: IndexOutOfBoundsException,  que quiere decir "índice fuera de rango".**
 - **Verifica tu código analizando que en ningún momento el subíndice se haga negativo,   o llegue a ser mayor o igual que la longitud del arreglo. **
