@@ -1,14 +1,7 @@
 <div class="row">
   <div class="small-12 columns">
     <h1>Editar Ejercicio</h1>
-
-    <%= simple_form_for [:admin, @practice] do |f| %>
-      <%= display_flash_messages %>
-
-      <%= f.input :subject %><br>
-      <%= f.button :submit %>
-
-    <% end %>
+    <%= render 'form' %>
   </div>
 </div>
 

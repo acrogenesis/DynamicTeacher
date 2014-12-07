@@ -1,7 +1,7 @@
 <%= simple_form_for [:admin, @practice] do |f| %>
   <%= display_flash_messages %>
 
-  <%= f.input :subject %>
+  <%= f.input :subject, collection: Subject.subjects %>
 
   <%= f.button :submit %>
 <% end %>
