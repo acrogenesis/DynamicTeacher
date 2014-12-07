@@ -5,7 +5,7 @@ class HomeworksUsersController < ApplicationController
 
   def create
     @homework_user = HomeworkUser.new(homework_user_params)
-    # authorize @homework_user
+    authorize @homework_user
 
     if @homework_user.save
       redirect_to dashboard_path
