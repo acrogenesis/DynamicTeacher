@@ -16,13 +16,19 @@
       <%= simple_form_for @homework_user do |f| %>
         <%= f.hidden_field :homework_id, value: @homework.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :url %>
         Archivo de tarea
-        <%= f.input :file, label: false %>
+        <%= f.input :file do %>
+          <%= f.file_field :files, id: "homework_user_file" %>
+          <br/>
+          <div class="progress success">
+            <span class="meter", style="width: 0%"></span>
+          </div>
+        <% end %>
 
-        <%= f.button :submit, 'Subir Tarea', class: 'button small radius success' %>
+        <%= f.button :submit, 'Subir Tarea', class: 'button small radius success', id: 'new_homework_user_submit' %>
       <% end %>
     </div>
-
   </div>
 </div>
 

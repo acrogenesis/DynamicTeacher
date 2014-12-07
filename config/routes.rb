@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#index'
+  get 'generate_signed_s3_url' => 'aws#generate_signed_s3_url'
 
   devise_for :users, controllers: { registrations: 'registrations',
                                     sessions: 'sessions',
