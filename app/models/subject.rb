@@ -4,4 +4,8 @@ class Subject
   def self.subjects
     SUBJECTS
   end
+
+  def self.next(current)
+    SUBJECTS[SUBJECTS.index(current)+1]
+  end
 end
