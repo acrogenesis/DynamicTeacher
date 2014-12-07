@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :homeworks, except: :index
     resources :homeworks_users, only: [:show, :update, :destroy]
     resources :groups, except: :index
+    resources :videos, except: :index
     resources :diagnostic_exams do
       resources :questions
     end

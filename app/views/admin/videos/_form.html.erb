@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, @video] do |f| %>
+  <%= display_flash_messages %>
+
+  <%= f.input :title %>
+  <%= f.input :subject, collection: Subject.subjects %>
+  <%= f.input :url %>
+
+  <%= f.button :submit %>
+
+<% end %>

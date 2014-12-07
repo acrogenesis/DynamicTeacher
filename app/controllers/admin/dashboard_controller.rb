@@ -5,5 +5,6 @@ class Admin::DashboardController < ApplicationController
     @groups = Group.all
     @diagnostic_exams = DiagnosticExam.all
     @practices = Practice.all
+    @videos = Video.all
   end
 end

@@ -1,0 +1,23 @@
+<%= link_to 'Crear Video', new_admin_video_path, class: 'button tiny radius' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+      <th>Subject</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @videos.each do |video| %>
+    <tr>
+      <td><%= link_to video.title, video.url %></td>
+      <td><%= video.subject %></td>
+      <td>
+        <%= link_to 'Editar', edit_admin_video_path(video), class: 'button tiny radius no-margin' %>
+        <%= link_to 'Borrar', admin_video_path(video), class: 'button tiny radius alert no-margin', method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

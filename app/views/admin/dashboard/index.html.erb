@@ -12,6 +12,7 @@
       <dd><a href="#grupos"><%= fa_icon 'users' %> Grupos</a></dd>
       <dd><a href="#examenes_diagnositcos"><%= fa_icon 'stethoscope' %> Examenes Diagnosticos</a></dd>
       <dd><a href="#ejercicios"><%= fa_icon 'bicycle' %> Ejercicios</a></dd>
+      <dd><a href="#videos"><%= fa_icon 'video-camera' %> Videos</a></dd>
       <!-- <dd><a href="#metricas"><%#= fa_icon 'bar-chart' %> Metricas</a></dd> -->
     </dl>
     <div class="tabs-content">
@@ -29,6 +30,9 @@
       </div>
       <div class="content" id="grupos">
         <%= render 'grupos' %>
+      </div>
+      <div class="content" id="videos">
+        <%= render 'videos' %>
       </div>
       <!-- <div class="content" id="metricas">
         <%#= render 'metricas' %>
