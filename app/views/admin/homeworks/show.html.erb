@@ -20,13 +20,14 @@
 
 <div class="row">
   <div class="small-12 columns">
-    Description: <%= @homework.description %>
+    Deadline: <%= @homework.deadline %>
   </div>
 </div>
 
 <div class="row">
   <div class="small-12 columns">
-    Deadline: <%= @homework.deadline %>
+    Description:
+    <%= markdown @homework.description %>
   </div>
 </div>
 
