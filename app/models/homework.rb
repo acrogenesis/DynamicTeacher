@@ -1,6 +1,10 @@
 class Homework < ActiveRecord::Base
   has_and_belongs_to_many :users
 
+  def self.specifc_homeworks(attr)
+    where(subject: attr[:subject], level: attr[:level])
+  end
+
   def delivered_icon(current_user)
     delivered = HomeworkUser.where(user_id: current_user, homework_id: self).first
     if delivered
