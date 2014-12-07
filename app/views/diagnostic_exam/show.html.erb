@@ -13,13 +13,12 @@
           <div class="large-6 columns">
             <label><strong><%= question.question %></strong></label>
             <% question.answers.each do |answer| %>
-              <%= radio_button_tag "answers[#{question.id}]", answer.id, false %>
-              <label for="answers_<%= "#{question.id}_#{answer.id}" %>"><%= answer.answer %></label>
+              <%= render "field_#{answer.field_type}", answer: answer %>
             <% end %>
           </div>
         </div>
       <% end %>
-      <%= f.button :submit %>
+      <%= f.button :submit, 'Enviar' %>
     <% end %>
   </div>
 </div>

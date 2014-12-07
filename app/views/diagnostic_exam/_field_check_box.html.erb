@@ -1,0 +1,2 @@
+<%= check_box_tag "answers[#{answer.question.id}][]", answer.id, false, id: "answers_#{answer.question.id}_#{answer.id}" %>
+<label for="answers_<%= "#{answer.question.id}_#{answer.id}" %>"><%= answer.answer %></label>

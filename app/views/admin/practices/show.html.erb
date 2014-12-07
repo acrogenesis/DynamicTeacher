@@ -13,7 +13,9 @@
       </div>
       <div class="row">
         <div class="small-12 columns">
-          Respuesta correcta: <%= question.correct_answer.answer %>
+          <% question.correct_answer.each do |correct_answers| %>
+            Respuesta correcta: <%= correct_answers.answer %>
+          <% end %>
         </div>
       </div>
     <% end %>
