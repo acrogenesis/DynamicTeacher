@@ -20,7 +20,7 @@ class SessionsController < Devise::SessionsController
       if current_user.level
         dashboard_path
       else
-        diagnostic_exam_path(DiagnosticExam.where(subject: 'basic').first.id)
+        diagnostic_exam_path(DiagnosticExam.where(subject: 'basic_concepts').first.id)
       end
     end
   end

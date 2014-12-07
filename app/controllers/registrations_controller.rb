@@ -41,7 +41,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
-    diagnostic_exam_path(DiagnosticExam.where(subject: 'basic').first.id)
+    diagnostic_exam_path(DiagnosticExam.where(subject: 'basic_concepts').first.id)
   end
 
   def configure_permitted_parameters

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
       if current_user.level
         return
       else
-        redirect_to diagnostic_exam_path(DiagnosticExam.where(subject: 'basic').first.id)
+        redirect_to diagnostic_exam_path(DiagnosticExam.where(subject: 'basic_concepts').first.id)
       end
     end
   end
