@@ -1,4 +1,4 @@
-class Admin::PracticesController < ApplicationController
+class Admin::PracticesController < Admin::ApplicationController
   before_action :set_practice, only: [:show, :edit, :update, :destroy]
 
   def show
@@ -15,6 +15,7 @@ class Admin::PracticesController < ApplicationController
 
   def create
     @practice = Practice.new(practice_params)
+    authorize @practice
 
     if @practice.save
       redirect_to admin_dashboard_path(anchor: 'ejercicios')
@@ -24,6 +25,7 @@ class Admin::PracticesController < ApplicationController
   end
 
   def update
+    authorize @practice
     if @practice.update(practice_params)
       redirect_to admin_dashboard_path(anchor: 'ejercicios')
     else
@@ -32,6 +34,7 @@ class Admin::PracticesController < ApplicationController
   end
 
   def destroy
+    authorize @practice
     @practice.destroy
   end
 

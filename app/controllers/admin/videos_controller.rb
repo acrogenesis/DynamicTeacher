@@ -1,4 +1,4 @@
-class Admin::VideosController < ApplicationController
+class Admin::VideosController < Admin::ApplicationController
   before_action :set_video, only: [:edit, :update, :destroy]
 
   def new
@@ -7,6 +7,7 @@ class Admin::VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
+    authorize @video
 
     if @video.save
       redirect_to admin_dashboard_path(anchor: 'videos')
@@ -16,6 +17,7 @@ class Admin::VideosController < ApplicationController
   end
 
   def update
+    authorize @video
     if @video.update(video_params)
       redirect_to admin_dashboard_path(anchor: 'videos')
     else
@@ -24,6 +26,7 @@ class Admin::VideosController < ApplicationController
   end
 
   def destroy
+    authorize @video
     @video.destroy
   end
 

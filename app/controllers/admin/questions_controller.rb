@@ -1,4 +1,4 @@
-class Admin::QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_diagnostic_exam_or_practice, only: [:new, :edit]
 
@@ -18,6 +18,7 @@ class Admin::QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    authorize @question
     if @question.save
       if @question.diagnostic_exam_id
         redirect_to edit_admin_diagnostic_exam_path(params[:diagnostic_exam_id])
@@ -34,6 +35,7 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def update
+    authorize @question
     if @question.update(question_params)
       if @question.diagnostic_exam_id
         redirect_to edit_admin_diagnostic_exam_path(params[:diagnostic_exam_id])
@@ -50,6 +52,7 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def destroy
+    authorize @question
     @question.destroy
   end
 
@@ -67,7 +70,6 @@ class Admin::QuestionsController < ApplicationController
       @object = Practice.find(params[:practice_id])
       @back_route = edit_admin_practice_path(@object)
     end
-
   end
 
   def question_params

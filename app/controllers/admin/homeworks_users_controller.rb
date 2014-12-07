@@ -1,10 +1,11 @@
-class Admin::HomeworksUsersController < ApplicationController
+class Admin::HomeworksUsersController < Admin::ApplicationController
   before_action :set_homework, only: [:show, :update, :destroy]
 
   def show
   end
 
   def update
+    authorize @homework
     if @homework.update(homework_user_params)
       redirect_to admin_dashboard_path(anchor: 'revisar_tareas')
     else
@@ -13,6 +14,7 @@ class Admin::HomeworksUsersController < ApplicationController
   end
 
   def destroy
+    authorize @homework
     if @homework.destroy
       redirect_to admin_dashboard_path(anchor: 'revisar_tareas')
     else

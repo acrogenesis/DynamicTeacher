@@ -1,4 +1,4 @@
-class Admin::HomeworksController < ApplicationController
+class Admin::HomeworksController < Admin::ApplicationController
   before_action :set_homework, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,6 +17,7 @@ class Admin::HomeworksController < ApplicationController
 
   def create
     @homework = Homework.new(homework_params)
+    authorize @homework
 
     if @homework.save
       redirect_to admin_dashboard_path(anchor: 'tareas')
@@ -26,6 +27,7 @@ class Admin::HomeworksController < ApplicationController
   end
 
   def update
+    authorize @homework
     if @homework.update(homework_params)
       redirect_to admin_dashboard_path(anchor: 'tareas')
     else
@@ -34,6 +36,7 @@ class Admin::HomeworksController < ApplicationController
   end
 
   def destroy
+    authorize @homework
     if @homework.destroy
       redirect_to admin_dashboard_path(anchor: 'tareas')
     else

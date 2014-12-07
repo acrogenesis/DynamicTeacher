@@ -1,4 +1,4 @@
-class Admin::DiagnosticExamsController < ApplicationController
+class Admin::DiagnosticExamsController < Admin::ApplicationController
   before_action :set_diagnostic_exam, only: [:show, :edit, :update, :destroy]
 
   def show
@@ -15,6 +15,7 @@ class Admin::DiagnosticExamsController < ApplicationController
 
   def create
     @diagnostic_exam = DiagnosticExam.new(diagnostic_exam_params)
+    authorize @diagnostic_exam
 
     if @diagnostic_exam.save
       redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
@@ -24,6 +25,7 @@ class Admin::DiagnosticExamsController < ApplicationController
   end
 
   def update
+    authorize @diagnostic_exam
     if @diagnostic_exam.update(diagnostic_exam_params)
       redirect_to admin_dashboard_path(anchor: 'examenes_diagnositcos')
     else
@@ -32,6 +34,7 @@ class Admin::DiagnosticExamsController < ApplicationController
   end
 
   def destroy
+    authorize @diagnostic_exam
     @diagnostic_exam.destroy
   end
 

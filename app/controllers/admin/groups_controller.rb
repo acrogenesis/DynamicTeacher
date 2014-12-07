@@ -1,4 +1,4 @@
-class Admin::GroupsController < ApplicationController
+class Admin::GroupsController < Admin::ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -10,6 +10,7 @@ class Admin::GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    authorize @group
 
     if @group.save
       redirect_to admin_dashboard_path(anchor: 'grupos')
@@ -19,6 +20,7 @@ class Admin::GroupsController < ApplicationController
   end
 
   def update
+    authorize @group
     if @group.update(group_params)
       redirect_to admin_dashboard_path(anchor: 'grupos')
     else
@@ -27,6 +29,7 @@ class Admin::GroupsController < ApplicationController
   end
 
   def destroy
+    authorize @group
     @group.destroy
   end
 
