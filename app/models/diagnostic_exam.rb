@@ -6,7 +6,7 @@ class DiagnosticExam < ActiveRecord::Base
 
   def check(params_answers)
     grade = 0
-    question_value = 100.0 / answers.count
+    question_value = 100.0 / questions.count
     params_answers.each do |answer|
       grade += question_value if Question.find(answer[0]).check(answer[1])
     end
