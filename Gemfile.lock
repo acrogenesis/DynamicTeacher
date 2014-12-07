@@ -5,6 +5,15 @@ GIT
     abracadabra (1.2.0)
       rails (>= 3.2.11)
 
+GIT
+  remote: git://github.com/svenfuchs/rails-i18n.git
+  revision: ccfb6d9151fbe180ff70a4eb3420d6abfac3d905
+  branch: master
+  specs:
+    rails-i18n (4.0.3)
+      i18n (~> 0.6)
+      railties (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -60,6 +69,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-i18n (0.11.2)
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
@@ -171,6 +181,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 4.0.0)
   devise
+  devise-i18n
   dotenv-rails
   font-awesome-rails
   foundation-rails (= 5.4.1.0)
@@ -184,6 +195,7 @@ DEPENDENCIES
   rails-assets-ace-builds
   rails-assets-datatables
   rails-assets-jquery
+  rails-i18n!
   rails_12factor
   redcarpet
   sass-rails (~> 4.0.3)

@@ -4,6 +4,8 @@ source 'https://rails-assets.org'
 ruby '2.1.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+gem 'devise-i18n'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
