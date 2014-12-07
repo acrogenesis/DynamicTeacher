@@ -5,13 +5,18 @@
         <div class="small-12">
           <h3><%= subject %></h3>
           <div class="row">
-            <% videos.each do |video| %>
+            <% videos[0..-2].each do |video| %>
               <div class="small-4 columns">
                 <div class="flex-video">
                   <%= raw iframe_video(video.url) %>
                 </div>
               </div>
             <% end %>
+            <div class="small-4 columns end">
+              <div class="flex-video">
+                <%= raw iframe_video(videos.last.url) if !videos.empty? %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
