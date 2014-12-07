@@ -8,7 +8,7 @@
 
 puts 'Creando Subjects...'
 Subject.subjects.each do |subject|
-  DiagnosticExam.create(subject: subject)
+  DiagnosticExam.create(subject: subject) if DiagnosticExam.where(subject: subject).empty?
 end
 
 puts 'Creando Tareas...'
@@ -16,5 +16,5 @@ homeworks = Dir[File.join('db/homeworks/*')].sort
 
 homeworks.each do |homework|
   subject, level = File.basename(homework).split('-')
-  Homework.create(subject: subject, level: level, description: File.read(homework))
+  Homework.create(subject: subject, level: level, description: File.read(homework)) if Homework.where(subject: subject, level: level, description: File.read(homework)).empty?
 end
