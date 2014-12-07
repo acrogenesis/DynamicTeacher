@@ -7,7 +7,7 @@ class DashboardController < ApplicationController
     Subject.subjects.each do |subject|
       @video_hash.merge!(subject => Video.where(subject: subject))
     end
-    redirect_to next_diagnostic_exam_path if @pending_homeworks.empty?
+    flash[:warning] = "Tienes un Examen Diagnostico pendiente <strong>#{view_context.link_to 'ir a examen', next_diagnostic_exam_path}</strong>".html_safe if @pending_homeworks.empty?
   end
 
   private
