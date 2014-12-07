@@ -1,0 +1,18 @@
+# Cálculos Matemáticos
+
+Escribe un programa que solicite al usuario tres enteros en las variables x, y, z. A partir de estos valores el programa deberá desplegar el resultado de:
+
+- `x / y`
+- `x % y`
+- `x / y - z`
+- `x / (y - z)`
+
+### Casos de Prueba
+
+| x | y | z | x / y | x % y | x / y - z| x / (y-z)|
+|:-:|:-:|:-:|:-----:|:-----:|:--------:|:--------:|
+| 2 | 4 | 5 | 0     | 2     | -5       | -2       |
+| 1 | 2 | 1 | 0     | 1     | -1       | 1        |
+| 6 | 3 | 2 | 2     | 0     | 0        | 6        |
+
+Ejecuta el programa varias veces con diferentes valores como entrada y verifica el resultado.

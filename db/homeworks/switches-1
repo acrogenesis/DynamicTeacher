@@ -1,0 +1,29 @@
+ #Teclas de Teléfono
+
+Desarrolla una Aplicación que lea de teclado una sola letra  y despliegue el dígito correspondiente de acuerdo a las teclas del teléfono. Las letras y los dígitos del teléfono están agrupados de la siguiente forma:
+
+|2|3|4|5|6|7|8|9|
+|-|-|-|-|-|-|-|-|
+|ABC|DEF|GHI|JKL|MNO|PRS|TUV|WXY|
+
+###Información Relevante
+
+Para la realización de esta aplicación, existen diversos factores a tomar en cuenta:
+
+- Ningún dígito corresponde a la Q o la Z. Para estas 2 letras, tu aplicación debe desplegar un mensaje indicando que éstas ```No son utilizadas en el teléfono```.
+El mismo mensaje se debe desplegar para caracteres especiales.
+- Asume que el usuario solo ingresará letras mayúsculas.
+- Para esta aplicación utiliza un método de tipo int que reciba como parámetro: la letra tecleada por el usuario.  El método deberá devolver como valor de retorno el dígito que corresponde a esa letra.
+- El programa se ejecuta mientras que el usuario así lo desea.
+- Agrega un contador, para saber cuántas veces se ejecutó el proceso. Despliega esta información al final y después despide al usuario.
+
+###Ejemplos
+```sh
+Teclea una letra, y yo te diré qué dígito del teléfono le corresponde:
+> R
+El dígito 7 corresponde a la letra R en el teléfono.```
+
+```sh
+Teclea una letra, y yo te diré qué dígito del teléfono le corresponde:
+> Q
+No hay ningún dígito en el teléfono que corresponda a la Q.```

@@ -1,0 +1,26 @@
+#Multiplicación de Matrices
+
+La regla en la multiplicación de matrices es que el número de columnas de la primera matriz sea igual al número de filas de la segunda, esto es, que se puede hacer una multiplicación de una matriz 2x3 por una de 3x5, y la matriz resultante tiene el número de filas de la primer matriz y las columnas de la segunda, por lo que quedaria una matriz de 2x5.
+
+###**¿Qué hay que hacer?**
+
+Desarrolla un método sin valor de retorno, que reciba como parámetros 3 matrices de enteros, a, b y c.   El método deberá multiplicar la matriz a por la matriz b y dejar el resultado en la matriz c.
+En el main deberás de llamar al método multiplicar y posteriormente al método despliega, para comprobar que la matriz resultante es correcta.
+
+La aplicación también deberá verificar si se puede o no hacer la multiplicación. En caso contrario, se deberá mostrar un mensaje de error.
+
+###Información Relevante
+
+A diferencia de la suma y la resta, la multiplicación no es posición por posición, sino que se hace de la siguiente manera:
+
+- Se toma la primera fila de la primer matriz y la primer columna de la segunda matriz, y lo que se hace es multiplicar una posición de fila por una de columna.
+
+###EJEMPLO
+
+Matriz A: ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbegin%7Bbmatrix%7D2%20%26%204%20%26%206%20%5C%5C-1%20%26%203%20%26%209%20%5Cend%7Bbmatrix%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+Matriz B: ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbegin%7Bbmatrix%7D-5%20%20%5C%5C-7%5C%5C6%20%5Cend%7Bbmatrix%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+Matriz Resultante: ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbegin%7Bbmatrix%7D-2%20%20%5C%5C38%20%5Cend%7Bbmatrix%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+###A X B = Matriz Resultante

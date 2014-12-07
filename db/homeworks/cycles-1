@@ -1,0 +1,30 @@
+#Tablas en Consola
+
+- Desarrolla una Aplicación que muestre la **tabla de multiplicar** de un número entero dado por el usuario.
+- Utiliza un ciclo **WHILE**  para mostrar la tabla de multiplicar desde 0 hasta 10, del número dado por el usuario.
+- Desarrolla un **método void** llamado **DespliegaTablaWHILE**, que recibe como parámetro el número entero **n** tecleado por el usuario.  
+- Desarrolla otro **método void** llamado **DespliegaTablaConFOR**, que recibe como parámetro el número entero **n** tecleado por el usuario.  
+- Dentro del Main llama a los 2 métodos por separado, para comprobar que sí funcionan.  Agrega un letrero que diga: "Tablas con WHILE" y otro que diga "Tablas con FOR".
+
+**Ejemplo:**
+
+```
+Dime un numero entero y yo te digo su tabla:   4
+
+Tablas con WHILE
+La tabla del 4 es:
+4 * 0 = 0
+4 * 1 = 4
+4 * 2 = 8
+…
+4 * 9 = 36
+4 * 10 = 40
+
+Tablas con FOR
+La tabla del 4 es:
+4 * 0 = 0
+4 * 1 = 4
+4 * 2 = 8
+…
+4 * 9 = 36
+4 * 10 = 40```

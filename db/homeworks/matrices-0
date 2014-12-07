@@ -1,0 +1,23 @@
+#Resta de Matrices
+
+La única regla que hay para la resta de matrices es que ambas tienen que tener el mismo número de filas y de columnas, y no importa si son rectangulares o cuadradas.
+
+Lo que se hace es restar cada posición de una matriz con la misma de la otra, por lo que la matriz resultante es una con el mismo número de filas y columnas que las demás y cuyos valores son la resta de los valores de las otras 2 matrices.
+
+**¿Qué hay que hacer?**
+
+Desarrolla un método sin valor de retorno, que reciba como parámetros 3 matrices de enteros, a, b y c.   El método deberá restar la matriz a menos la matriz b y dejar el resultado en la matriz c.
+En el main deberás de llamar al método resta y posteriormente al método despliega, para comprobar que la matriz resultante es correcta.
+
+**Ejemplo**:
+
+Matriz A:
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbegin%7Bbmatrix%7D-3%20%26%203%20%26%202%20%5C%5C4%20%26%20-1%20%26%201%20%5C%5C1%20%26%20-2%20%26%200%20%5Cend%7Bbmatrix%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+Matriz B:
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbegin%7Bbmatrix%7D1%20%26%206%20%26%204%20%5C%5C10%20%26%208%20%26%202%20%5C%5C-6%20%26%205%20%26%20-5%20%5Cend%7Bbmatrix%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+Matriz Resultante:
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbegin%7Bbmatrix%7D-4%20%26%20-3%20%26%20-2%20%5C%5C-6%20%26%20-7%20%26%20-3%20%5C%5C7%20%26%20-7%20%26%205%20%5Cend%7Bbmatrix%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+###A - B = Matriz Resultante

@@ -1,0 +1,23 @@
+# Conversiones
+
+Desarrolla un solo Programa con los siguientes métodos estáticos:
+
+- Desarrolla un método estático de tipo double llamado **OnzaAGramos**, que recibe como parámetro un valor entero que representa la cantidad a convertir. El método deberá convertir y regresar el valor de onzas a gramos.
+
+- Desarrolla un método estático de tipo double llamado **LibraAKg**, que recibe como parámetro un valor entero que representa la cantidad a convertir. El método deberá convertir y regresar el valor de libras a Kgs.
+
+- Desarrolla un método estático de tipo double llamado **StoneAKg**, que recibe como parámetro un valor entero que representa la cantidad a convertir. El método deberá convertir y regresar el valor de Stone1 a Kgs.
+
+- Desarrolla un método estático de tipo int llamado **HundredWeightAKg**, que recibe como parámetro un valor entero que representa la cantidad a convertir. El método deberá convertir y regresar el valor de HundredWeight2 a Kgs.  Observa que el método devuelve un entero, por lo que deberás hacer casting.
+
+- Desarrolla un método estático de tipo void llamado **ToneladaATonMet**, que recibe como parámetro un valor entero que representa la cantidad a convertir. El método deberá convertir y desplegar en pantalla el valor de Tonelada a Tonelada métrica. Observa que dentro del método despliega en pantalla el resultado. NO tiene valor de retorno.
+
+Utiliza la siguiente tabla de equivalencias:
+
+|Imperial       |Métrica               |
+|:-------------:|:--------------------:|
+|1 onza         |28.35 gramos          |
+|1 libra        |0.4536 Kg             |
+|1 stone        |6.3503 Kg             |
+|1 hundredweight|50.802 Kg             |
+|1 tonelada     |1.016 tonelada métrica|

@@ -1,0 +1,18 @@
+#Horas Trabajadas
+
+Desarrolla una aplicación que solicite a un trabajador las horas trabajadas y el pago por hora del trabajador.   Tu aplicación deberá tener un método  llamado  calculaSalarioNeto  que devuelva el salario neto semanal de los trabajadores de una empresa de acuerdo a las siguientes normas:
+- Horas semanales trabajadas <= 40 a una tasa dada.
+- Horas extras (más de 40) a una tasa 50% superior a la ordinaria.
+- Impuestos 0%, si el salario bruto es menor o igual a $8,000.00.
+- Impuestos 10% si el salario bruto es mayor a $8,000.00.
+
+El método deberá recibir como parámetro las horas trabajadas **(int)** y el pago por hora del trabajador **(double)**.
+
+###Casos de Prueba
+
+|Horas|Salario/Hora|Salario Bruto|Impuestos|Salario Neto|
+|-|-|-|-|-|
+|20|200|4000|0|4000|
+|40|200|8000|0|8000|
+|41|200|8300|830|7470|
+|50|200|11000|1100|9900|

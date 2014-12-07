@@ -1,0 +1,40 @@
+#Arreglos
+
+Desarrolla una aplicación que haga lo siguiente:
+- **(Dentro del Main)**: Pregunte al usuario el número de elementos de un arreglo.
+- **(Dentro del Main)**: Cree el arreglo de enteros.
+- **(Dentro del Main)**: Llame al método LeeArreglo.
+- **(Dentro del Main)**: Llame al método DespliegaAsteriscos.
+- **(Método void LeeArreglo)**: Que recibe como parámetro un arreglo de enteros. Pregunta al usuario el valor de cada elemento del arreglo.
+- **(Método void despliegaAsteriscos)**: Que recibe como parámetro un arreglo de enteros.  El método deberá mostrar una línea de asteriscos *para cada elemento del arreglo*,  dependiendo de su valor.   Para mostrar la línea de asteriscos dentro de este método, deberás utilizar **for**.
+
+**Ejemplos:**
+
+Si el arreglo contiene los siguientes números:
+
+|3|2|6|5|7|
+|-|-|-|-|-|
+|0|1|2|3|4|
+
+**Desplegará**:
+```
+***
+**
+******
+*****
+*******```
+
+
+Si el arreglo contiene los siguientes números:
+
+|3|12|6|50|17|
+|-|--|-|--|--|
+|0|1 |2|3 |4 |
+
+**Desplegará**:
+```
+***
+************
+******
+**************************************************
+*****************```

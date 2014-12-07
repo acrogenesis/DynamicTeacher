@@ -1,0 +1,42 @@
+#Promedio y Desviación Estándar
+
+Desarrolla una Aplicación para leer números enteros y obtener el **promedio**,  y posteriormente  desarrolla un método para calcular la **desviación estándar**.
+
+El método llamado estándar deberá recibir como parámetro un arreglo de tipo entero, y su valor de retorno será de tipo double.  Este método deberá calcular y regresar la desviación estándar de los números contenidos en el arreglo. La fórmula para calcular la desviación estándar es:
+
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Csigma%20%3D%20%20%20%5Csqrt%7B%5Cfrac%7B1%7D%7BN-1%7D%20%5Csum_1%5EN%20%20%28x_%7Bi%7D-%20%5Cbar%7Bx%7D%29%5E%7B2%7D%20%7D%20%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+
+Donde X  es el promedio de los números de x1 a xn  y   n  es el tamaño del arreglo.
+
+**Notas:**
+- Tu aplicación deberá desplegar el promedio y la desviación estándar.
+- Tu código deberá contener comentarios con:  autor, versión y fecha.
+- **Esta tarea DEBE ser realizada en forma INDIVIDUAL.  Sin embargo, te puedes apoyar con algún compañero.  Es importante comprender este tema.**
+
+**Ejemplo:**
+
+Si **N = 6**
+
+`x1 = 4, x2 = 1, x3 = 11, x4 = 13, x5 = 2, x6 = 7`
+
+**Paso 1:**
+
+Primero obtenemos el promedio:
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbar%7Bx%7D%20%3D%20%20%5Cfrac%7B1%7D%7B6%7D%20%20%20%5Csum_1%5E6%20%20x_%7Bi%7D%20%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+Obteniendo así el promedio ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbar%7Bx%7D%20%3D%20%206.33&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+**Paso 2:**
+
+Calculamos la desviación estándar:
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Csigma%20%3D%20%20%20%5Csqrt%7B%5Cfrac%7B1%7D%7BN-1%7D%20%5Csum_1%5EN%20%20%28x_%7Bi%7D-%20%5Cbar%7Bx%7D%29%5E%7B2%7D%20%7D%20%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%20%5Csigma%20%3D%20%20%5Csqrt%7B%20%5Cfrac%7B1%7D%7B5%7D%20%20%5Csum_1%5E6%20%20%28%20x_%7Bi%7D%20-%206.33%29%20%5E%7B2%7D%20%20%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+Obteniendo así:
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%20%5Csigma%20%3D%20%204.88&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)

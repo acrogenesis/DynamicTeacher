@@ -1,0 +1,18 @@
+#Materias Cursadas
+
+La dirección de la carrera desea saber qué materias puede llevar un alumno dependiendo de la cantidad de créditos acumulados. En la siguiente tabla se muestran las materias que puede llevar dependiendo de los créditos.
+
+|CREDITOS|MATERIAS                      |
+|:------:|:----------------------------:|
+|5       | Fisica, Química              |
+|10      | Matemáticas, Química         |
+|15      | Literatura, Biología, Química|
+|20      | Mecánica, Inglés, Redes      |
+|25      | Proyectos IV, Historia       |
+|30      | Economia, Contabilidad       |
+
+**VALIDAR que los CREDITOS están entre 1 y 30**
+
+Implementa un programa que lea la cantidad de créditos acumulados de un alumno y despliegue las materias que puede cursar. Si la cantidad de créditos acumulados no es ninguna de las mostradas en la tabla, el programa deberá desplegar el siguiente mensaje: `NO PUEDE CURSAR NINGUNA MATERIA`
+
+**NOTA:** Puedes combinar el uso de la claúsula switch con el if.

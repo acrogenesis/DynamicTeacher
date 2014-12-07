@@ -1,0 +1,29 @@
+#Parkside's Triangle
+
+El Triángulo Parkside es un modelo matemático que genera un triángulo de números,  dados dos variables: **el tamaño (N) y la semilla (S).**
+
+La variable tamaño (N) debe estar entre `1 <= N <= 20`.
+La semilla (S) debe estar entre `1 <= S <= 9`.
+
+El número **N** representa el número de filas.   Si `N = 5`, entonces hay 5 filas que forman el triángulo.  Observa que la primera fila (o renglón) del triángulo, no debe tener ninguna casilla vacía.  El otro número llamado **S** es la semilla, que representa el primer número de la primera fila del triángulo.
+
+###Procedimiento:
+
+- Lee los datos N y S.
+- Crea una matriz de enteros de N x N
+- Desarrolla el método: void Triangulo(int [ , ]mat, int s)   Este método llenará la matriz con el contador cuyo valor inicial es S.  Observa que el contador solo llega a 9, y después vuelve a empezar en 1.
+  - Piensa:   ¿Se llena en forma horizontal o vertical?
+  - ¿Hasta dónde avanza la i en la columna 0? ¿Hasta dónde avanza la i en la columna 1? ¿Hasta dónde avanza la i en la columna 2?...  ¿qué pasa cuando el contador llega a 9?
+- Desarrolla el método: void Despliega(int [ , ]mat)   Este método despliega la matriz.
+- Para comprobar que tu aplicación funciona,  corre tu programa utilizando los datos de prueba mostrados arriba.  Llama al método “Despliega”, para visualizar los datos.
+- Ya cuando funcione tu programa agrega esto: Validación de datos,  y Permitir al usuario volver a ejecutar el programa, mientras así lo desee.
+
+###Ejemplos
+
+Si `N = 4` y `S = 1`.
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbegin%7Bbmatrix%7D1%20%26%202%20%26%204%20%26%207%5C%5C%20%263%20%26%205%20%268%5C%5C%20%26%20%266%20%269%5C%5C%20%26%20%26%20%261%20%5Cend%7Bbmatrix%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+Si `N = 5` y `S = 3`.
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cbegin%7Bbmatrix%7D3%20%26%204%20%26%206%20%26%209%20%26%204%5C%5C%20%265%20%26%207%20%261%20%26%205%5C%5C%20%26%20%268%20%262%20%266%5C%5C%20%26%20%26%20%263%20%26%207%5C%5C%20%26%20%26%20%26%20%268%20%5Cend%7Bbmatrix%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)

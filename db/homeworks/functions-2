@@ -1,0 +1,17 @@
+#Área Triangular
+
+Se desea poner pasto en rollo en un parque de forma triangular, cuyos lados son A, B, C.  El pasto en rollo cuesta $40  (considera el costo como constante double)  
+
+Elabora un programa para encontrar el área del parque triangular si se leen de teclado las longitudes (double) de sus tres lados.   El programa desplegará como salida el valor del área del parque, y el costo total del pasto.
+
+El área de un triángulo cuyas longitudes de sus tres lados son A, B y C se puede calcular en base a la siguiente fórmula:
+
+**AREA = (A + B + C)/ 2**
+
+Para hacer esta Aplicación desarrolla un método de **tipo double** que reciba como parámetros los tres lados (double),  y regrese como valor de retorno el área del Triángulo.
+
+**Tip:** Dentro del método main calcula el costo total del pasto.
+
+###Ejemplo de Salida
+```
+El area del parque es: 100  metros cuadrados,  a $40 el pasto en rollo, son $4000 pesos.```

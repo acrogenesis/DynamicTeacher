@@ -1,0 +1,29 @@
+#Inversión
+
+Desarrolla un programa que muestre en pantalla cuánto te dará un banco después de **6 meses**, si pones determinada cantidad de dinero en una cuenta a plazo fijo al 8% anual.
+
+Recuerda que al pagarte los intereses, el banco te retendrá el 10% para Hacienda.  Utiliza las variables necesarias para leer y calcular los resultados.  Escribe los mensajes necesarios en la pantalla.   **Declara como constante entera el porcentaje de interés anual (8).**
+
+Para entender el cálculo, utiliza el siguiente ejemplo:
+
+**Monto Final = C x (1 + R/100.0 x T/360.0)**
+
+**Donde:**
+
+- `C = Capital`
+- `R = Interés Bancario`
+- `T = Tiempo de Deposito (en días)`
+
+#Ejemplo
+```sh
+*********************************************
+---------------------------------------------
+Banco Pagar Tec
+*********************************************
+---------------------------------------------
+Dime cuánto quieres poner en tu inversión a 6 meses:
+>  20000
+
+El interés acumulado en 6 meses es:  800 pesos
+Menos la retención del 10%:   720
+Monto final:  20,720```

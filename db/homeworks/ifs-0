@@ -1,0 +1,12 @@
+# Escuela de Música
+
+En una escuela de música se utilizan letras para dar las calificaciones de acuerdo con la siguiente conversión:
+
+
+- **A:** `Si calificación es >= 85`
+- **B:** `Si 60 <= calificación < 85`
+- **C:** `Si calificación es < 60`
+
+Escribe un programa que lea de teclado un número entero que representa la cantidad de puntos y despliegue en pantalla la clave de la calificación.
+
+**Nota:** Debes validar que la calificación este entre `0 y 100`,  de lo contrario desplegará la palabra “Error”.

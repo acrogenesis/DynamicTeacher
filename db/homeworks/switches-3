@@ -1,0 +1,22 @@
+#Multa de Tránsito
+
+- En algunas universidades de EUA los alumnos pueden transitar dentro de las calles del campus.
+- Existen ciertos límites de velocidad, que se deben de respetar, de lo contrario se emitirá una multa.  La mayoría tienen como límite 35 MPH,  pero en las calles de doble sentido es 15 MPH.
+- Para todos los estudiantes que exceden la velocidad se aplica una multa de $75.
+Además de estos $75 se carga un extra de $87.50 por cada 5MPH detectados arriba del límite de velocidad.
+- El oficial de tránsito cree que los alumnos de 4 año ya tienen suficiente experiencia, por lo que agrega $50 si se excedió por 20 MPH o menos.
+- Si es alumno de 4 año y se excedió por más de 20MPH, entonces se aplica $200 más a la multa.
+- Por otro lado, si es freshman y no se excedió de 20MPH, entonces se le hace una deducción de $50.
+- Pero si es freshman , sophomore, o junior,  y se excedió por arriba de los 20MPH se le hace un cargo adicional de $100.
+
+**NOTA:**
+
+|Status|Año|
+|------|---|
+|Freshman| 1er año|
+|Sophomore| 2ndo año|
+|Junior| 3er año|
+|Senior| 4to año|
+
+**NOTA 2:**
+Se puede combinar el uso de condicional switch con condicional if. 

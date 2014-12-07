@@ -1,0 +1,19 @@
+#Círculos
+
+###Descripción
+
+Este programa pregunta al usuario el radio de un círculo, y calcula la circunferencia, el área y el volumen de acuerdo al valor de radio dado por el usuario.
+
+El programa utiliza los siguientes métodos:
+- Un método de **tipo double** que recibe como parámetro el radio y calcula la Circunferencia:  2 * Pi * radio
+- Un método de **tipo double** que recibe como parámetro el radio y calcula el Area: Pi * radio2
+- Un método de **tipo int** que recibe como parámetro el radio y calcula el Volumen: 4/3 * Pi * radio3  (este método utiliza casting)
+- Un método **SIN valor** de retorno llamado DespliegaInfo que muestre la descripción del programa.
+- Llama desde el Main a los métodos desarrollados.
+
+###Casos de Prueba
+|Radio|Circunferencia|Area|Volumen|
+|:---:|:------------:|:--:|:-----:|
+|1    |6.283185307179586|6.283185307179586|4|
+|2| 12.566370614359172|  12.566370614359172|33|
+|3|18.84955592153876|28.274333882308138|113|
