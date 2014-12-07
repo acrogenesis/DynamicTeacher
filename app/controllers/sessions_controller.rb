@@ -1,4 +1,6 @@
 class SessionsController < Devise::SessionsController
+  skip_before_filter :check_first_diagnostic_exam
+
   def create
     if params[:user][:email].match(/[aAlL]\d{8}/)
       params[:user][:email] = "#{params[:user][:email]}@itesm.mx"

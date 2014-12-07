@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :configure_permitted_parameters
+  skip_before_filter :check_first_diagnostic_exam
 
   def create
     if params[:user][:email].match(/[aAlL]\d{8}/)

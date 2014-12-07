@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def check_first_diagnostic_exam
     if user_signed_in? && !current_user.admin?
       if current_user.level
-        redirect_to dashboard_path
+        return
       else
         redirect_to diagnostic_exam_path(DiagnosticExam.where(subject: 'basic').first.id)
       end
