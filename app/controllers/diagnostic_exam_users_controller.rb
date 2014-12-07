@@ -11,6 +11,7 @@ class DiagnosticExamUsersController < ApplicationController
     level = Level.level_for_grade(grade)
     new_params = diagnostic_exam_user_params.merge('grade' => grade)
     @diagnostic_exam_user = DiagnosticExamUser.new(new_params)
+    authorize @diagnostic_exam_user
     if @diagnostic_exam_user.save
       current_user.update_attribute(:level, level)
       current_user.update_attribute(:subject, diagnostic_exam.subject)

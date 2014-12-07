@@ -1,4 +1,8 @@
 class HomeworkUserPolicy < ApplicationPolicy
+  def create?
+    record.user_id == user.id
+  end
+
   def update?
     user.admin?
   end
