@@ -1,9 +1,9 @@
 <%= simple_form_for [:admin, @homework] do |f| %>
   <%= display_flash_messages %>
 
-  <%= f.input :level %>
-  <%= f.input :hw_type %>
-  <%= f.input :subject %>
+  <%= f.input :level, collection: [0, 1, 2] %>
+  <%= f.input :hw_type, collection: User.focus %>
+  <%= f.input :subject, collection: Subject.subjects %>
   <%= f.input :description %>
   <%= f.input :deadline %>
 
