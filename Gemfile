@@ -31,6 +31,7 @@ gem 'foundation-rails', '5.4.1.0'
 gem 'font-awesome-rails'
 gem 'simple_form'
 
+gem 'pygments.rb'
 gem 'redcarpet' # markdown
 
 # Uploading files

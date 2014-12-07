@@ -32,6 +32,15 @@ module ApplicationHelper
     link_to(name, '#', class: 'add_fields', data: { id: id, fields: fields.gsub("\n", '') })
   end
 
+  class HTMLwithPygments < Redcarpet::Render::HTML
+    def block_code(code, language)
+      sha = Digest::SHA1.hexdigest(code)
+      Rails.cache.fetch ['code', language, sha].join('-') do
+        Pygments.highlight(code, lexer: language)
+      end
+    end
+  end
+
   def markdown(text)
     render_options = {
       filter_html:     true,
@@ -41,7 +50,7 @@ module ApplicationHelper
     renderer = Redcarpet::Render::HTML.new(render_options)
 
     extensions = {
-      tables: true,
+      tables:             true,
       autolink:           true,
       fenced_code_blocks: true,
       lax_spacing:        true,
@@ -49,7 +58,13 @@ module ApplicationHelper
       strikethrough:      true,
       superscript:        true
     }
-    Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
+    Redcarpet::Markdown.new(HTMLwithPygments, extensions).render(text).html_safe
+  end
+
+  class HTMLwithPygments < Redcarpet::Render::HTML
+    def block_code(code, language)
+      Pygments.highlight(code, lexer: language)
+    end
   end
 
   private
