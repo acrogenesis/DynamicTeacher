@@ -1,5 +1,6 @@
 class DiagnosticExamController < ApplicationController
   before_action :set_diagnostic_exam, only: :show
+  skip_before_filter :check_first_diagnostic_exam
 
   def show
     @diagnostic_exam_user = DiagnosticExamUser.new

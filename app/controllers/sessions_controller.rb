@@ -15,7 +15,11 @@ class SessionsController < Devise::SessionsController
     if current_user.admin?
       admin_dashboard_path
     elsif current_user.user?
-      dashboard_path
+      if current_user.level
+        dashboard_path
+      else
+        diagnostic_exam_path(DiagnosticExam.where(subject: 'basic').first.id)
+      end
     end
   end
 end
