@@ -11,7 +11,7 @@
           <%= i+1 %>)
         </div>
         <div class="small-11 columns">
-          <strong><%= question.question %></strong>
+          <%= markdown question.question %>
         </div>
       </div>
       <% question.answers.each do |answer| %>

@@ -8,7 +8,8 @@
     <% @questions.each_with_index do |question, i| %>
       <div class="row">
         <div class="small-12 columns">
-          <strong>Pregunta <%= i+1 %>: <%= question.question %></strong>
+          <strong>Pregunta <%= i+1 %>:</strong>
+          <%= markdown question.question %>
         </div>
       </div>
       <div class="row">

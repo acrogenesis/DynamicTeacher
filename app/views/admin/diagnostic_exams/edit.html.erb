@@ -15,7 +15,8 @@
 <div class="row">
   <% @questions.each do |question| %>
     <div class="small-12 columns">
-      <%= question.question %> | <%= link_to 'Editar', edit_admin_diagnostic_exam_question_path(@diagnostic_exam, question) %>
+      <%= markdown question.question %>
+      <%= link_to 'Editar', edit_admin_diagnostic_exam_question_path(@diagnostic_exam, question) %>
     </div>
   <% end %>
 </div>
