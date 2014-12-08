@@ -21,13 +21,20 @@ end
 
 puts 'Creando Videos...'
 videos = [
-  { url: '//www.youtube.com/embed/T4RPkiXjqd8',
+  {
+    url: '//www.youtube.com/embed/T4RPkiXjqd8',
     subject: 'ifs',
     title: 'Estatuos de Decision #1'
   },
-  { url: '//www.youtube.com/embed/iFJ8xRgRoXg',
+  {
+    url: '//www.youtube.com/embed/iFJ8xRgRoXg',
     subject: 'switches',
     title: 'Estatuos de Decision #2'
+  },
+  {
+    url: '//www.youtube.com/embed/xAQiw-uoNeE',
+    subject: 'cycles',
+    title: 'Ciclos #1'
   }
 ]
 
