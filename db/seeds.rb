@@ -10,17 +10,7 @@ puts 'Creando Examenes Diagnosticos...'
 Subject.subjects.each do |subject|
   DiagnosticExam.create(subject: subject) if DiagnosticExam.where(subject: subject).empty?
 end
-# {
-#   subject: 'basic_concepts',
-#   questions_attributes: {
-#     question: 'Los siguientes son tipos de datos en C#',
-#     answer_attributes: {
-#       answer: 'bool',
-#       field_type: 'check_box',
-#       correct: true
-#     }
-#   }
-# }
+
 d = DiagnosticExam.where(subject: 'basic_concepts').first
 q = Question.create(question: 'Los siguientes son tipos de datos en C#', diagnostic_exam_id: d.id)
 Answer.create(answer: 'bool', field_type: 'check_box', correct: true, question_id: q.id)
@@ -164,39 +154,44 @@ q = Question.create(question: 'If (true) siempre se ejecutara', diagnostic_exam_
 Answer.create(answer: 'Falso', field_type: 'radio_button', correct: false, question_id: q.id)
 Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: true, question_id: q.id)
 
-#
-# puts 'Creando Tareas...'
-# homeworks = Dir[File.join('db/homeworks/*')].sort
-#
-# homeworks.each do |homework|
-#   subject, level = File.basename(homework).split('-')
-#   Homework.create(subject: subject, level: level, description: File.read(homework)) if Homework.where(subject: subject, level: level, description: File.read(homework)).empty?
-# end
-#
-# puts 'Creando Videos...'
-# videos = [
-#   {
-#     url: '//www.youtube.com/embed/T4RPkiXjqd8',
-#     subject: 'ifs',
-#     title: 'Estatuos de Decision #1'
-#   },
-#   {
-#     url: '//www.youtube.com/embed/iFJ8xRgRoXg',
-#     subject: 'switches',
-#     title: 'Estatuos de Decision #2'
-#   },
-#   {
-#     url: '//www.youtube.com/embed/xAQiw-uoNeE',
-#     subject: 'cycles',
-#     title: 'Ciclos #1'
-#   },
-#   {
-#     url: '//www.youtube.com/embed/OfT0585DZUg',
-#     subject: 'cycles',
-#     title: 'Ciclos #2'
-#   }
-# ]
-#
-# videos.each do |video|
-#   Video.create(video) if Video.where(video).empty?
-# end
+
+puts 'Creando Tareas...'
+homeworks = Dir[File.join('db/homeworks/*')].sort
+
+homeworks.each do |homework|
+  subject, level = File.basename(homework).split('-')
+  Homework.create(subject: subject, level: level, description: File.read(homework)) if Homework.where(subject: subject, level: level, description: File.read(homework)).empty?
+end
+
+puts 'Creando Videos...'
+videos = [
+  {
+    url: '//www.youtube.com/embed/T4RPkiXjqd8',
+    subject: 'ifs',
+    title: 'Estatuos de Decision #1'
+  },
+  {
+    url: '//www.youtube.com/embed/iFJ8xRgRoXg',
+    subject: 'switches',
+    title: 'Estatuos de Decision #2'
+  },
+  {
+    url: '//www.youtube.com/embed/xAQiw-uoNeE',
+    subject: 'cycles',
+    title: 'Ciclos #1'
+  },
+  {
+    url: '//www.youtube.com/embed/OfT0585DZUg',
+    subject: 'cycles',
+    title: 'Ciclos #2'
+  },
+  {
+    url: '//www.youtube.com/embed/cTrwF_NflK0',
+    subject: 'cycles',
+    title: 'Ciclos #3'
+  }
+]
+
+videos.each do |video|
+  Video.create(video) if Video.where(video).empty?
+end
