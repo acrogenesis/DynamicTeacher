@@ -35,6 +35,11 @@ videos = [
     url: '//www.youtube.com/embed/xAQiw-uoNeE',
     subject: 'cycles',
     title: 'Ciclos #1'
+  },
+  {
+    url: '//www.youtube.com/embed/OfT0585DZUg',
+    subject: 'cycles',
+    title: 'Ciclos #2'
   }
 ]
 
