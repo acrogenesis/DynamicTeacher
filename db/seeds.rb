@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-puts 'Creando Subjects...'
+puts 'Creando Examenes Diagnosticos...'
 Subject.subjects.each do |subject|
   DiagnosticExam.create(subject: subject) if DiagnosticExam.where(subject: subject).empty?
 end
@@ -17,4 +17,20 @@ homeworks = Dir[File.join('db/homeworks/*')].sort
 homeworks.each do |homework|
   subject, level = File.basename(homework).split('-')
   Homework.create(subject: subject, level: level, description: File.read(homework)) if Homework.where(subject: subject, level: level, description: File.read(homework)).empty?
+end
+
+puts 'Creando Videos...'
+videos = [
+  { url: '//www.youtube.com/embed/T4RPkiXjqd8',
+    subject: 'ifs',
+    title: 'Estatuos de Decision #1'
+  },
+  { url: '//www.youtube.com/embed/iFJ8xRgRoXg',
+    subject: 'switches',
+    title: 'Estatuos de Decision #2'
+  }
+]
+
+videos.each do |video|
+  Video.create(video) if Video.where(video).empty?
 end
