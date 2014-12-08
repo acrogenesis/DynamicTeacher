@@ -42,7 +42,7 @@ Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: false, q
 
 q = Question.create(question: 'Método utilizado para convertir de un String a un número entero', diagnostic_exam_id: d.id)
 Answer.create(answer: 'texto.toInteger()', field_type: 'radio_button', correct: false, question_id: q.id)
-Answer.create(answer: 'parse(texto)', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Int.parse(texto)', field_type: 'radio_button', correct: true, question_id: q.id)
 Answer.create(answer: 'parse(texto)', field_type: 'radio_button', correct: false, question_id: q.id)
 
 q = Question.create(question: 'Diferencia entre las comillas simples (\') y las dobles (")', diagnostic_exam_id: d.id)
