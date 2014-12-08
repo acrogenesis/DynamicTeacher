@@ -12,7 +12,7 @@
           <%= f.password_field :password, placeholder: "Contraseña" %>
         </div>
         <div class="small-12 columns">
-          <%= f.select :group_id, Group.all.collect {|x| [x.name, x.id]}, {} %>
+          <%= f.select :group_id, Group.all.collect {|x| ["#{x.name} #{x.schedule}", x.id]}, {} %>
         </div>
         <div class="small-12 columns">
           <%= f.select :focus, User.focus %>
