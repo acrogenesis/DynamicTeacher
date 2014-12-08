@@ -15,10 +15,9 @@
       <tr>
         <td><%= homework.level %></td>
         <td><%= homework.hw_type %></td>
-        <td><%= homework.subject %></td>
+        <td><%= link_to homework.subject, admin_homework_path(homework) %></td>
         <td><%= homework.deadline %></td>
         <td>
-          <%= link_to 'Ver', admin_homework_path(homework), class: 'button tiny radius no-margin' %>
           <%= link_to 'Editar', edit_admin_homework_path(homework), class: 'button tiny radius no-margin' %>
           <%= link_to 'Borrar', admin_homework_path(homework), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert no-margin' %>
         </td>
