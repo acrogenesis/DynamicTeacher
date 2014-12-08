@@ -81,6 +81,44 @@ Answer.create(answer: '1', field_type: 'radio_button', correct: false, question_
 Answer.create(answer: '1.5', field_type: 'radio_button', correct: true, question_id: q.id)
 Answer.create(answer: '2', field_type: 'radio_button', correct: false, question_id: q.id)
 
+d = DiagnosticExam.where(subject: 'switches').first
+q = Question.create(question: 'Cuando se ejecuta el default', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Si no se cumplió ningún caso', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Después de que se ejecutó un caso', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Siempre', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Nunca', field_type: 'radio_button', correct: true, question_id: q.id)
+
+q = Question.create(question: 'Qué tipo de datos puede recibir un switch', diagnostic_exam_id: d.id)
+Answer.create(answer: 'bool', field_type: 'check_box', correct: false, question_id: q.id)
+Answer.create(answer: 'string', field_type: 'check_box', correct: true, question_id: q.id)
+Answer.create(answer: 'int', field_type: 'check_box', correct: true, question_id: q.id)
+Answer.create(answer: 'char', field_type: 'check_box', correct: true, question_id: q.id)
+Answer.create(answer: 'decimal', field_type: 'check_box', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Qué pasa si no utilizas un break por cada clase', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Sólo se ejecuta el primero de los casos', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Se ejecutan múltiples casos', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'No pasa nada', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Sé pueden utilizar múltiples tipos de datos para un switch', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Falso', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Se pueden repetir los casos dentro de un switch', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Falso', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Se puede evaluar más de una variable en un switch', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Falso', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Un switch puede tener más de un caso seguido (case 1: case 2: break;)', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Falso', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: true, question_id: q.id)
+
+q = Question.create(question: 'Un switch puede contener otro switch ', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Falso', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: true, question_id: q.id)
 #
 # puts 'Creando Tareas...'
 # homeworks = Dir[File.join('db/homeworks/*')].sort
