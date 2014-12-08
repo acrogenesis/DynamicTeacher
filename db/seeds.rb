@@ -81,6 +81,51 @@ Answer.create(answer: '1', field_type: 'radio_button', correct: false, question_
 Answer.create(answer: '1.5', field_type: 'radio_button', correct: true, question_id: q.id)
 Answer.create(answer: '2', field_type: 'radio_button', correct: false, question_id: q.id)
 
+d = DiagnosticExam.where(subject: 'ifs').first
+q = Question.create(question: 'El if se ejecuta cuando', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Se cumple la condición', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'No se cumple la condición', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Nunca', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Siempre', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'El else se ejecuta cuando', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Se cumple la condición', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'No se cumple la condición', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Nunca', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Siempre', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Un else if se ejecuta cuando', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Se cumple la condición, después de que fallo la del if', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'No se cumple la condición, después de que fallo la del if', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Se cumple la condición, después de que se realizó la del if', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'No se cumple la condición, después de que se realizó la del if', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Se puede anidar un if dentro de otro', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Falso', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: true, question_id: q.id)
+
+q = Question.create(question: 'El tipo de dato de la condición es de tipo', diagnostic_exam_id: d.id)
+Answer.create(answer: 'bool', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'string', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'int', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'char', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'decimal', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Límite de la cantidad de else ifs que puede haber', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Solamente uno', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Dos a tres', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'No hay limite', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'No se puede poner else if', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'Un if puede tener más de una condición', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Falso', field_type: 'radio_button', correct: true, question_id: q.id)
+Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: false, question_id: q.id)
+
+q = Question.create(question: 'If (true) siempre se ejecutara', diagnostic_exam_id: d.id)
+Answer.create(answer: 'Falso', field_type: 'radio_button', correct: false, question_id: q.id)
+Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: true, question_id: q.id)
+
+
 #
 # puts 'Creando Tareas...'
 # homeworks = Dir[File.join('db/homeworks/*')].sort
