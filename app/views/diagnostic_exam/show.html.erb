@@ -10,11 +10,12 @@
       <%= f.hidden_field :user_id, value: current_user.id %>
       <% @diagnostic_exam.questions.each_with_index do |question, i| %>
         <div class="row">
-          <div class="large-6 columns">
+          <div class="small-12 columns">
             <strong>Pregunta <%= i+1 %>:</strong>
             <%= markdown question.question %>
             <% question.answers.each do |answer| %>
               <%= render "field_#{answer.field_type}", answer: answer %>
+              <br/>
             <% end %>
           </div>
         </div>
