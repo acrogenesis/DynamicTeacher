@@ -230,3 +230,8 @@ Answer.create(answer: File.read('db/practices/arrays.cs'), field_type: 'code', c
 pr = Practice.where(subject: 'matrices').first
 q = Question.create(question: File.read('db/practices/matrices.md'), practice_id: pr.id)
 Answer.create(answer: File.read('db/practices/matrices.cs'), field_type: 'code', correct: true, question_id: q.id)
+
+puts 'Creando grupos...'
+
+Group.create(schedule: '1030 LuJu', name: 'Fundamentos de Programación')
+Group.create(schedule: '12 LuJu', name: 'Fundamentos de Programación')
