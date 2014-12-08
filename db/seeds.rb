@@ -154,7 +154,6 @@ q = Question.create(question: 'If (true) siempre se ejecutara', diagnostic_exam_
 Answer.create(answer: 'Falso', field_type: 'radio_button', correct: false, question_id: q.id)
 Answer.create(answer: 'Verdadero', field_type: 'radio_button', correct: true, question_id: q.id)
 
-
 puts 'Creando Tareas...'
 homeworks = Dir[File.join('db/homeworks/*')].sort
 
@@ -195,3 +194,39 @@ videos = [
 videos.each do |video|
   Video.create(video) if Video.where(video).empty?
 end
+
+puts 'Creando Ejercicios...'
+
+practices = Dir[File.join('db/practices/*.cs')].sort
+practices.each do |practice|
+  subject, _extension = File.basename(practice).split('.')
+  Practice.create(subject: subject) if Practice.where(subject: subject).empty?
+end
+
+pr = Practice.where(subject: 'basic_concepts').first
+q = Question.create(question: File.read('db/practices/basic_concepts.md'), practice_id: pr.id)
+Answer.create(answer: File.read('db/practices/basic_concepts.cs'), field_type: 'code', correct: true, question_id: q.id)
+
+pr = Practice.where(subject: 'cycles').first
+q = Question.create(question: File.read('db/practices/cycles.md'), practice_id: pr.id)
+Answer.create(answer: File.read('db/practices/cycles.cs'), field_type: 'code', correct: true, question_id: q.id)
+
+pr = Practice.where(subject: 'functions').first
+q = Question.create(question: File.read('db/practices/functions.md'), practice_id: pr.id)
+Answer.create(answer: File.read('db/practices/functions.cs'), field_type: 'code', correct: true, question_id: q.id)
+
+pr = Practice.where(subject: 'ifs').first
+q = Question.create(question: File.read('db/practices/ifs.md'), practice_id: pr.id)
+Answer.create(answer: File.read('db/practices/ifs.cs'), field_type: 'code', correct: true, question_id: q.id)
+
+pr = Practice.where(subject: 'switches').first
+q = Question.create(question: File.read('db/practices/switches.md'), practice_id: pr.id)
+Answer.create(answer: File.read('db/practices/switches.cs'), field_type: 'code', correct: true, question_id: q.id)
+
+pr = Practice.where(subject: 'arrays').first
+q = Question.create(question: File.read('db/practices/arrays.md'), practice_id: pr.id)
+Answer.create(answer: File.read('db/practices/arrays.cs'), field_type: 'code', correct: true, question_id: q.id)
+
+pr = Practice.where(subject: 'matrices').first
+q = Question.create(question: File.read('db/practices/matrices.md'), practice_id: pr.id)
+Answer.create(answer: File.read('db/practices/matrices.cs'), field_type: 'code', correct: true, question_id: q.id)
