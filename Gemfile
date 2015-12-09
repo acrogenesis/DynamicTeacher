@@ -25,7 +25,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'pundit'
 
-gem 'abracadabra', github: 'acrogenesis/abracadabra'
+gem 'abracadabra', github: 'acrogenesis-lab/abracadabra'
 
 # bower
 gem 'rails-assets-datatables'
